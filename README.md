@@ -19,6 +19,8 @@ Personal portfolio site for John Pendergrass — AI practitioner, Certified Scru
 ![Node.js Badge](https://shields.io/badge/runtime-Node.js-lightgreen)
 ![SQL Badge](https://shields.io/badge/language-SQL-lightgrey)
 ![MongoDB Badge](https://shields.io/badge/database-MongoDB-brightgreen)
+![Vite Badge](https://shields.io/badge/vite-brightblue)
+
 
 ### AI & ML
 ![LangChain Badge](https://shields.io/badge/framework-LangChain-brightgreen)
@@ -31,6 +33,8 @@ Personal portfolio site for John Pendergrass — AI practitioner, Certified Scru
 ![RAG Badge](https://shields.io/badge/technique-RAG-teal)
 ![Fine Tuning Badge](https://shields.io/badge/technique-Fine%20Tuning-blueviolet)
 ![Prompt Engineering Badge](https://shields.io/badge/skill-Prompt%20Engineering-blue)
+![ClaudeAI Badge](https://shields.io/badge/skill-ClaudeAI-orange)
+![Claude Code Badge](https://shields.io/badge/skill-Claude%20Code-orange)
 
 ### Agile & Practices
 ![Scrum Badge](https://shields.io/badge/framework-Scrum-blue)
@@ -38,7 +42,17 @@ Personal portfolio site for John Pendergrass — AI practitioner, Certified Scru
 ![Product Ownership Badge](https://shields.io/badge/role-Product%20Ownership-purple)
 ![KPI Development Badge](https://shields.io/badge/skill-KPI%20Development-green)
 ![Instructional Design Badge](https://shields.io/badge/skill-Instructional%20Design-red)
-![ADDIE Badge](https://shields.io/badge/framework-ADDIE-pink)
+![Agile Badge](https://shields.io/badge/coaching-agile-magenta)
+
+### Platforms
+![Azure DevOps Badge](https://shields.io/badge/platform-Azure%20DevOps-blue)
+![AWS Badge](https://shields.io/badge/platform-AWS-yellow)
+![AWS Bedrock Badge](https://shields.io/badge/role-AWS%20Bedrock-green)
+![AWS Cloudwatch Badge](https://shields.io/badge/role-AWS%20Cloudwatch-red)
+![AWS Lambda Badge](https://shields.io/badge/role-AWS%20Lambda-orange)
+![AWS S3 Badge](https://shields.io/badge/role-AWS%20S3-orange)
+![Gemini Enterprise Badge](https://shields.io/badge/role-Gemini%20Engerprise-blue)
+![CrewAI Badge](https://shields.io/badge/role-CrewAI-blue)
 
 ---
 
