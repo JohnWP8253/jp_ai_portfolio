@@ -54,6 +54,13 @@
   border-top: 1px solid var(--hairline);
 }
 
+.proj-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .proj-link {
   font-size: 0.78rem;
   font-weight: 600;
