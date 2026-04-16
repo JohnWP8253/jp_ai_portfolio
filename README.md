@@ -2,7 +2,43 @@
 
 Personal portfolio site for John Pendergrass — AI practitioner, Certified ScrumMaster, and educator.
 
+[![Linkedin Badge](https://img.shields.io/badge/-johnp-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/j-pendergrass/)](https://www.linkedin.com/in/j-pendergrass/)
+[![Gmail Badge](https://img.shields.io/badge/-j.w.pendergrass-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:j.w.pendergrass@gmail.com)](mailto:j.w.pendergrass@gmail.com)
+[![iCloud Badge](https://img.shields.io/badge/-john.pendergrass-006ee6?style=flat&logo=iCloud&logoColor=white&link=mailto:john.pendergrass@me.com)](mailto:john.pendergrass@me.com)
+
 **Live site:** [johnwp8253.github.io](https://johnwp8253.github.io) *(GitHub Pages)*
+
+---
+
+### Languages & Libraries
+![Python Badge](https://shields.io/badge/language-Python-green)
+![JavaScript Badge](https://shields.io/badge/language-JavaScript-yellow)
+![HTML Badge](https://shields.io/badge/language-HTML-orange)
+![CSS Badge](https://shields.io/badge/language-CSS-blue)
+![React Badge](https://shields.io/badge/library-React-61dafb)
+![Node.js Badge](https://shields.io/badge/runtime-Node.js-lightgreen)
+![SQL Badge](https://shields.io/badge/language-SQL-lightgrey)
+![MongoDB Badge](https://shields.io/badge/database-MongoDB-brightgreen)
+
+### AI & ML
+![LangChain Badge](https://shields.io/badge/framework-LangChain-brightgreen)
+![LlamaIndex Badge](https://shields.io/badge/framework-LlamaIndex-blue)
+![CrewAI Badge](https://shields.io/badge/framework-CrewAI-orange)
+![Hugging Face Badge](https://shields.io/badge/platform-Hugging%20Face-yellow)
+![ChromaDB Badge](https://shields.io/badge/database-ChromaDB-purple)
+![Ollama Badge](https://shields.io/badge/tool-Ollama-black)
+![MLX Badge](https://shields.io/badge/framework-MLX-lightgrey)
+![RAG Badge](https://shields.io/badge/technique-RAG-teal)
+![Fine Tuning Badge](https://shields.io/badge/technique-Fine%20Tuning-blueviolet)
+![Prompt Engineering Badge](https://shields.io/badge/skill-Prompt%20Engineering-blue)
+
+### Agile & Practices
+![Scrum Badge](https://shields.io/badge/framework-Scrum-blue)
+![Kanban Badge](https://shields.io/badge/framework-Kanban-yellow)
+![Product Ownership Badge](https://shields.io/badge/role-Product%20Ownership-purple)
+![KPI Development Badge](https://shields.io/badge/skill-KPI%20Development-green)
+![Instructional Design Badge](https://shields.io/badge/skill-Instructional%20Design-red)
+![ADDIE Badge](https://shields.io/badge/framework-ADDIE-pink)
 
 ---
 
