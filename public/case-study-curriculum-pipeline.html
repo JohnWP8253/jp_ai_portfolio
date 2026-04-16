@@ -368,7 +368,7 @@
     <div class="stat"><div class="stat-num">216+</div><div class="stat-label">Lesson Plans Processed</div></div>
     <div class="stat"><div class="stat-num">72</div><div class="stat-label">Module Overviews Generated</div></div>
     <div class="stat"><div class="stat-num">6</div><div class="stat-label">Grade Levels · K–5</div></div>
-    <div class="stat"><div class="stat-num">&lt;1hr</div><div class="stat-label">Per Grade · End-to-End</div></div>
+    <div class="stat"><div class="stat-num">&lt;10min</div><div class="stat-label">Per Grade · End-to-End</div></div>
   </div>
   <div class="hero-meta">
     <div class="meta-chip">Role: <span>Director, AI Integration</span></div>
@@ -383,7 +383,7 @@
   <div class="ip-notice">
     <strong>Portfolio Note:</strong> This case study describes original technical architecture and methodology developed in the role of Director of AI Integration. Company and client identities are anonymised. No proprietary content, lesson plan material, or trade secrets belonging to any former employer are reproduced herein. All architectural descriptions reference publicly documented AWS services and standard industry patterns.
   </div>
-</div>
+</div>hr
 
 <section id="challenge">
   <div class="section-inner">
@@ -603,9 +603,18 @@
       </div>
     </div>
 
+      <div class="phase">
+        <div class="phase-num">λ5</div>
+        <div class="phase-body">
+          <div class="phase-title">HTML Injection &amp; Pre-Production Validation</div>
+          <div class="phase-desc">The final Lambda in the chain served two purposes. First, it rendered the completed JSON payload into a production-ready Google Document using a structured HTML template injected via the Google Docs API — keeping all output natively within the company's GSuite environment and matching the publisher's established document format. Second, before injection, it ran every generated section through a configurable guardrails layer that validated content against editorial guidelines, structural requirements, and output schema constraints. Any validation failure triggered a CloudWatch alarm, routing the affected module to an error queue for triage. Outputs that cleared all checks were staged for mandatory human-in-the-loop (HITL) review — the final gate before content was approved for deployment to the curriculum.</div>
+        </div>
+      </div>
+    </div>
+
     <div class="callout callout-amber" style="margin-top:2rem;">
-      <div class="callout-label">Parent Letter — Inclusion Design</div>
-      <p>The parent letter was a deliberate addition to the scope: a plain-language summary of what students would cover in the module, paired with suggested at-home activities to reinforce learning. Producing it in both English and Spanish via DeepL's neural translation API ensured accessibility for the full range of families served by the curriculum — with no additional human translation overhead.</p>
+      <div class="callout-label">Human-in-the-Loop Gate</div>
+      <p>λ5 was designed as a hard gate, not a soft warning. No output reached the HITL review queue without passing guardrails validation — ensuring that content specialists spent their review time on editorial judgement, not catching structural or schema errors that automation could own. CloudWatch alarms provided immediate visibility into any failure, with enough context to diagnose the root cause without re-running the full pipeline.</p>
     </div>
 
     <h3>Project timeline</h3>
