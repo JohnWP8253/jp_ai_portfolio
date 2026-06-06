@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case Study — AI-Powered Curriculum Pipeline | John Pendergrass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --white:    #FFFFFF;
+    --off:      #F8F8F8;
+    --black:    #0A0A0A;
+    --mid:      #3A3A3A;
+    --muted:    #717171;
+    --hairline: #E4E4E4;
+    --accent:   #1A6B3C;
+    --font:     'Outfit', system-ui, sans-serif;
+    --max:      1080px;
+    --nav-h:    64px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: var(--font); background: var(--white); color: var(--black); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+
+  /* — NAV — */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--hairline);
+    height: var(--nav-h);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+  }
+  .header-brand { font-size: 0.95rem; font-weight: 600; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 2.5rem; align-items: center; }
+  nav a { font-size: 0.82rem; font-weight: 500; color: var(--muted); transition: color 0.15s; }
+  nav a:hover { color: var(--black); }
+  .header-back { color: var(--accent) !important; font-weight: 600; }
+
+  /* — HERO — */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: flex-end;
+    padding-top: var(--nav-h); padding-bottom: 5rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .hero-inner {
+    max-width: var(--max); margin: 0 auto;
+    padding: 0 2rem; width: 100%;
+  }
+  .hero-label {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero-label::before {
+    content: ''; display: inline-block; width: 24px; height: 1px;
+    background: var(--accent);
+  }
+  h1 {
+    font-size: clamp(3rem, 8vw, 7rem); font-weight: 800;
+    line-height: 0.95; letter-spacing: -0.03em; color: var(--black);
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .hero-bottom {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; align-items: end;
+    padding-top: 2.5rem; border-top: 1px solid var(--hairline);
+    animation: fadeUp 0.7s 0.35s ease both;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.15rem); font-weight: 400;
+    color: var(--mid); line-height: 1.65; max-width: 46ch;
+  }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end; align-content: flex-start; }
+  .meta-chip {
+    font-size: 0.72rem; font-weight: 500; color: var(--muted);
+    border: 1px solid var(--hairline); border-radius: 2px;
+    padding: 0.28rem 0.65rem;
+  }
+  .meta-chip span { color: var(--black); font-weight: 600; }
+
+  /* — HERO STATS — */
+  .hero-stats {
+    display: flex; flex-wrap: wrap;
+    border: 1px solid var(--hairline); border-radius: 2px;
+    overflow: hidden; margin-top: 3rem;
+    animation: fadeUp 0.7s 0.45s ease both;
+  }
+  .stat { flex: 1; min-width: 150px; padding: 1.75rem 2rem; border-right: 1px solid var(--hairline); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 3rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--black); margin-bottom: 0.3rem; }
+  .stat-label { font-size: 0.75rem; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* — SECTIONS — */
+  section { padding: 7rem 0; border-bottom: 1px solid var(--hairline); }
+  section:last-of-type { border-bottom: none; }
+  .section-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 3.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+
+  h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700;
+    line-height: 1.15; letter-spacing: -0.025em;
+    color: var(--black); margin-bottom: 1.5rem;
+  }
+  h3 {
+    font-size: 1.05rem; font-weight: 700; color: var(--black);
+    margin: 2.5rem 0 0.75rem; letter-spacing: -0.01em;
+  }
+  p { margin-bottom: 1rem; color: var(--mid); line-height: 1.75; }
+  strong { color: var(--black); font-weight: 600; }
+
+  ul { margin: 0.5rem 0 1rem; }
+  ul li { padding: 0.4rem 0 0.4rem 1rem; color: var(--mid); position: relative; font-size: 0.95rem; line-height: 1.65; }
+  ul li::before { content: '—'; position: absolute; left: 0; color: var(--hairline); }
+
+  /* — IP NOTICE — */
+  .ip-notice {
+    background: var(--off); border: 1px solid var(--hairline);
+    border-radius: 2px; padding: 1rem 1.5rem; margin: 2rem 0;
+    font-size: 0.82rem; color: var(--muted); line-height: 1.65;
+  }
+  .ip-notice strong { color: var(--black); font-weight: 600; }
+
+  /* — CALLOUT — */
+  .callout {
+    background: var(--off); border-left: 3px solid var(--accent);
+    border-radius: 0 2px 2px 0;
+    padding: 1.25rem 1.5rem; margin: 2rem 0;
+  }
+  .callout-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+  }
+  .callout p { margin: 0; font-size: 0.92rem; color: var(--mid); }
+  .callout-amber { border-left-color: var(--black); }
+  .callout-amber .callout-label { color: var(--black); }
+
+  /* — PIPELINE DIAGRAM — */
+  .diagram-wrap {
+    background: #080e1f; border: 1px solid var(--hairline);
+    border-radius: 2px; padding: 2rem 1.5rem; margin: 2.5rem 0;
+    overflow-x: auto;
+  }
+  .diagram-wrap svg { display: block; min-width: 800px; width: 100%; }
+
+  /* — KB GRID — */
+  .kb-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--hairline); border-radius: 2px;
+    overflow: hidden; margin: 1.5rem 0;
+  }
+  .kb-card { padding: 2rem; border-right: 1px solid var(--hairline); }
+  .kb-card:last-child { border-right: none; }
+  .kb-card:hover { background: var(--off); }
+  .kb-card-icon {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem;
+  }
+  .kb-card-title { font-size: 1rem; font-weight: 700; color: var(--black); margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+  .kb-card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  /* — PHASE LIST — */
+  .phase-list { display: flex; flex-direction: column; margin: 1.5rem 0; }
+  .phase {
+    display: grid; grid-template-columns: 52px 1fr;
+    min-width: 0;
+    border: 1px solid var(--hairline); border-bottom: none;
+    overflow: hidden;
+  }
+  .phase:first-child { border-radius: 2px 2px 0 0; }
+  .phase:last-child { border-bottom: 1px solid var(--hairline); border-radius: 0 0 2px 2px; }
+  .phase:hover { background: var(--off); }
+  .phase-num {
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 1.2rem;
+    font-size: 0.82rem; font-weight: 700; color: var(--accent);
+    border-right: 1px solid var(--hairline); background: var(--off);
+    flex-shrink: 0;
+  }
+  .phase-body { padding: 1.2rem 1.5rem; min-width: 0; }
+  .phase-title {
+    font-size: 0.92rem; font-weight: 700; color: var(--black);
+    margin-bottom: 0.4rem; line-height: 1.4;
+    overflow-wrap: break-word; word-break: break-word;
+  }
+  .phase-title .phase-date {
+    display: block; font-weight: 400; font-size: 0.78rem;
+    color: var(--muted); margin-top: 0.15rem; letter-spacing: 0;
+  }
+  .phase-desc {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin: 0;
+    overflow-wrap: break-word; word-break: break-word;
+  }
+  .phase-solo {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); margin-top: 0.5rem;
+  }
+
+  @media (max-width: 540px) {
+    .phase { grid-template-columns: 40px 1fr; }
+    .phase-num { font-size: 0.72rem; padding-top: 1rem; }
+    .phase-body { padding: 1rem 1rem; }
+    .phase-title { font-size: 0.85rem; }
+    .phase-desc { font-size: 0.82rem; }
+  }
+
+  /* — SPLIT TABLE — */
+  .split-table {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--hairline); border-radius: 2px;
+    overflow: hidden; margin: 1.5rem 0;
+  }
+  .split-col:first-child { border-right: 1px solid var(--hairline); }
+  .split-head {
+    padding: 0.85rem 1.2rem;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .split-head.etl { background: var(--off); color: var(--accent); border-bottom: 1px solid var(--hairline); }
+  .split-head.rag { background: var(--off); color: var(--black); border-bottom: 1px solid var(--hairline); }
+  .split-item { padding: 0.55rem 1.2rem; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--hairline); }
+
+  /* — KPI GRID — */
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--hairline); border-radius: 2px;
+    overflow: hidden; margin: 2rem 0;
+  }
+  .kpi-card {
+    padding: 2rem;
+    border-right: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .kpi-card:nth-child(3n)   { border-right: none; }
+  .kpi-card:nth-last-child(-n+3) { border-bottom: none; }
+  .kpi-card:hover { background: var(--off); }
+  .kpi-val { font-size: 3rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--black); margin-bottom: 0.3rem; }
+  .kpi-label { font-size: 0.82rem; font-weight: 500; color: var(--muted); line-height: 1.4; }
+
+  /* — TECH TAGS — */
+  .tech-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0 1.5rem; }
+  .tech-tag { font-size: 0.7rem; font-weight: 500; padding: 0.25rem 0.6rem; background: var(--off); color: var(--mid); border-radius: 2px; }
+
+  /* — ROLE CARD — */
+  .role-card {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--hairline); border-radius: 2px;
+    overflow: hidden; margin: 1.5rem 0;
+  }
+  .role-block { padding: 2rem; }
+  .role-block:first-child { border-right: 1px solid var(--hairline); }
+  .role-block h3 { margin-top: 0; font-size: 0.95rem; }
+  .role-block p { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.65; }
+
+  /* — FOOTER — */
+  footer { padding: 2rem 0; border-top: 1px solid var(--hairline); }
+  .footer-inner {
+    max-width: var(--max); margin: 0 auto; padding: 0 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+  .footer-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;
+  }
+  .footer-note { font-size: 0.78rem; color: var(--muted); max-width: 55ch; line-height: 1.6; }
+  footer a { color: var(--accent); font-weight: 600; }
+
+  /* — ANIMATIONS — */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* — RESPONSIVE — */
+  @media (max-width: 860px) {
+    nav { display: none; }
+    .hero-bottom { grid-template-columns: 1fr; }
+    .hero-meta { justify-content: flex-start; }
+    .kb-grid { grid-template-columns: 1fr; }
+    .kb-card { border-right: none; border-bottom: 1px solid var(--hairline); }
+    .kb-card:last-child { border-bottom: none; }
+    .split-table { grid-template-columns: 1fr; }
+    .split-col:first-child { border-right: none; border-bottom: 1px solid var(--hairline); }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .kpi-card:nth-child(3n) { border-right: 1px solid var(--hairline); }
+    .kpi-card:nth-child(2n) { border-right: none; }
+    .role-card { grid-template-columns: 1fr; }
+    .role-block:first-child { border-right: none; border-bottom: 1px solid var(--hairline); }
+    section { padding: 4rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">AI Integration Case Study</div>
+  <nav>
+    <a href="#challenge">Challenge</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#pipeline">Pipeline</a>
+    <a href="#results">Results</a>
+    <a href="#lessons">Lessons</a>
+    <a href="/" class="header-back">← Portfolio</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-label">Director of AI Integration &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; AWS Bedrock</p>
+    <h1>AI-Powered <em>Curriculum</em><br>Content Pipeline</h1>
+    <div class="hero-bottom">
+      <p class="hero-sub">
+        Designed and delivered a RAG + ETL pipeline — and led its scale to a production
+        single-agent workflow — that automated the generation of module and grade-level
+        overviews for a K–5 music curriculum.
+      </p>
+      <div class="hero-meta">
+        <div class="meta-chip">Role: <span>Director, AI Integration</span></div>
+        <div class="meta-chip">Team: <span>2 Entry-Level Engineers</span></div>
+        <div class="meta-chip">Platform: <span>AWS Bedrock + Lambda + EventBridge</span></div>
+        <div class="meta-chip">Timeline: <span>Nov 2025 – Feb 2026 · 5 Sprints</span></div>
+        <div class="meta-chip">Translation: <span>DeepL API (EN → ES)</span></div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">216+</div><div class="stat-label">Lesson Plans Processed</div></div>
+      <div class="stat"><div class="stat-num">72</div><div class="stat-label">Module Overviews Generated</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Grade-Level Overviews</div></div>
+      <div class="stat"><div class="stat-num">&lt;10min</div><div class="stat-label">Per Grade · End-to-End</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-inner" style="padding-top: 2rem; padding-bottom: 0;">
+  <div class="ip-notice">
+    <strong>Portfolio Note:</strong> This case study describes original technical architecture and methodology developed in the role of Director of AI Integration. Company and client identities are anonymised. No proprietary content, lesson plan material, or trade secrets belonging to any former employer are reproduced herein. All architectural descriptions reference publicly documented AWS services and standard industry patterns.
+  </div>
+</div>
+
+<section id="challenge">
+  <div class="section-inner">
+    <p class="eyebrow">01 — The Challenge</p>
+    <h2>A curriculum without a map</h2>
+    <p>
+      A K–12 educational publisher had authored a complete K–5 music curriculum: six grade levels,
+      each comprising <strong>36 individual lesson plans</strong>. Each lesson plan contained rich
+      instructional content — essential questions, assessments, vocabulary, teacher guidance, and
+      purpose statements — but there were no higher-level artifacts to help teachers and administrators
+      understand the scope, sequence, or pedagogical intent of the programme.
+    </p>
+    <p>
+      Creating module overviews (one per three lessons, twelve per grade) and a grade-level overview
+      manually required content specialists to synthesise, extract, and write across hundreds of
+      documents — inconsistently, slowly, and at significant cost to their capacity for higher-order
+      curriculum work.
+    </p>
+    <h3>Core constraints</h3>
+    <ul>
+      <li><strong>Strict-copy fidelity:</strong> Several sections required verbatim extraction — no paraphrasing allowed. Any error here would propagate to teacher-facing materials.</li>
+      <li><strong>Bloom's taxonomy alignment:</strong> Generative copy needed to reflect specific cognitive levels for teacher vs. administrator audiences.</li>
+      <li><strong>Multilingual output:</strong> Parent-facing letters required accurate Spanish translation.</li>
+      <li><strong>Scale + consistency:</strong> Quality and formatting had to remain identical across 72 modules and 6 grade levels.</li>
+      <li><strong>Auditability:</strong> Every generated section needed to be traceable back to its source content.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="section-inner">
+    <p class="eyebrow">02 — Architecture</p>
+    <h2>A three-layer knowledge foundation</h2>
+    <p>
+      Before building the pipeline, I architected the Knowledge Base (KB) layer in AWS Bedrock —
+      working solo in this first phase. The KB served not just as a retrieval store but as a
+      <strong>structured reference system</strong> that grounded all downstream generation. I designed
+      what I called the <em>three neural documents</em>: a trio of interoperable JSON files that,
+      together, gave the agent a complete and queryable model of the curriculum's structure.
+    </p>
+
+    <div class="kb-grid">
+      <div class="kb-card">
+        <div class="kb-card-icon">Neural Doc 01 · JSON</div>
+        <div class="kb-card-title">KB Manifest</div>
+        <div class="kb-card-desc">
+          Mapped every field present in both the module overview and grade-level overview document
+          structures. Acted as the authoritative index of what the pipeline was responsible for
+          producing — and where each piece of content belonged in the final output.
+        </div>
+      </div>
+      <div class="kb-card">
+        <div class="kb-card-icon">Neural Doc 02 · JSON</div>
+        <div class="kb-card-title">Field Definitions</div>
+        <div class="kb-card-desc">
+          Defined every key referenced in the manifest: data type, expected format, valid values,
+          content description, and whether the field was strict-copy (ETL) or generative (RAG).
+          This document was the pipeline's source of truth for output validation.
+        </div>
+      </div>
+      <div class="kb-card">
+        <div class="kb-card-icon">Neural Doc 03 · JSON</div>
+        <div class="kb-card-title">Vector Index Schema</div>
+        <div class="kb-card-desc">
+          Defined the OpenSearch Serverless index mapping for the KB — specifying which document
+          fields to embed for semantic retrieval vs. which to store as filterable metadata attributes
+          (e.g., <code style="font-family:monospace;font-size:.8em;color:var(--cyan)">grade_level</code>,
+          <code style="font-family:monospace;font-size:.8em;color:var(--cyan)">module_number</code>,
+          <code style="font-family:monospace;font-size:.8em;color:var(--cyan)">section_type</code>).
+          This enabled the retrieval Lambdas to apply precise metadata filters during KB queries,
+          preventing cross-grade or cross-module content bleed.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Design Rationale</div>
+      <p>The schema document was the key to making retrieval <em>precise</em>, not just <em>semantic</em>. By storing grade level, module number, and section type as indexed metadata attributes alongside the vector embeddings, Lambda functions could retrieve content like "all strict-copy fields from Grade 3, Module 4" using a structured filter — eliminating ambiguity and ensuring the right lesson plans always grounded the right outputs.</p>
+    </div>
+
+    <h3>Content segmentation</h3>
+    <p>A critical architectural decision was the explicit bifurcation of the document into two processing paths before any content was generated:</p>
+    <div class="split-table">
+      <div class="split-col">
+        <div class="split-head etl">Strict-Copy Sections · ETL Lambda</div>
+        <div class="split-item">Table of Contents</div>
+        <div class="split-item">Lesson Names</div>
+        <div class="split-item">Summative Assessments</div>
+        <div class="split-item">Formative Assessments</div>
+        <div class="split-item">Essential Questions</div>
+        <div class="split-item">Module Vocabulary</div>
+      </div>
+      <div class="split-col">
+        <div class="split-head rag">Generated Sections · RAG + Agent Lambda</div>
+        <div class="split-item">Module Overview Narrative</div>
+        <div class="split-item">Assessment Guidance Questions</div>
+        <div class="split-item">Interdisciplinary Activities (Maths, Literacy)</div>
+        <div class="split-item">Music &amp; Skills Integration Copy</div>
+        <div class="split-item">Teacher &amp; Admin Copy (Bloom's Taxonomy)</div>
+        <div class="split-item">Parent Home-Engagement Letter (EN + ES)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <div class="section-inner" style="max-width:960px;">
+    <p class="eyebrow">03 — Pipeline</p>
+    <h2>Five Lambdas, one payload</h2>
+    <p>
+      Lesson plans were received as <strong>JSON exports of Google Docs</strong>. The pipeline
+      ingested each set of three lesson plans assigned to a module and passed a single, accumulating
+      JSON payload through a chain of purpose-built Lambda functions.
+    </p>
+
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#00c8ff" opacity=".7"/>
+          </marker>
+          <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#162040"/>
+            <stop offset="100%" stop-color="#0f1830"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="8" y="120" width="110" height="80" rx="8" fill="url(#cardGrad)" stroke="rgba(0,200,255,.3)" stroke-width="1"/>
+        <text x="63" y="150" text-anchor="middle" fill="#8492a6" font-size="9" letter-spacing="1" font-family="DM Mono,monospace">SOURCE</text>
+        <text x="63" y="167" text-anchor="middle" fill="#f0f4fa" font-size="11" font-weight="600">Google Docs</text>
+        <text x="63" y="182" text-anchor="middle" fill="#8492a6" font-size="10">JSON Export</text>
+        <line x1="118" y1="160" x2="138" y2="160" stroke="#00c8ff" stroke-width="1.2" marker-end="url(#arr)" opacity=".6"/>
+
+        <rect x="142" y="100" width="126" height="120" rx="8" fill="url(#cardGrad)" stroke="rgba(0,200,255,.4)" stroke-width="1.2"/>
+        <text x="205" y="124" text-anchor="middle" fill="#00c8ff" font-size="9" letter-spacing="1" font-family="DM Mono,monospace">λ 01</text>
+        <text x="205" y="142" text-anchor="middle" fill="#f0f4fa" font-size="11" font-weight="600">Preprocessor</text>
+        <text x="205" y="165" text-anchor="middle" fill="#8492a6" font-size="9.5">Cleans raw JSON,</text>
+        <text x="205" y="179" text-anchor="middle" fill="#8492a6" font-size="9.5">normalises structure,</text>
+        <text x="205" y="193" text-anchor="middle" fill="#8492a6" font-size="9.5">strips GDoc artefacts</text>
+        <line x1="268" y1="160" x2="288" y2="160" stroke="#00c8ff" stroke-width="1.2" marker-end="url(#arr)" opacity=".6"/>
+
+        <rect x="292" y="100" width="126" height="120" rx="8" fill="url(#cardGrad)" stroke="rgba(0,200,255,.5)" stroke-width="1.2"/>
+        <text x="355" y="124" text-anchor="middle" fill="#00c8ff" font-size="9" letter-spacing="1" font-family="DM Mono,monospace">λ 02</text>
+        <text x="355" y="142" text-anchor="middle" fill="#f0f4fa" font-size="11" font-weight="600">Strict Copy</text>
+        <text x="355" y="165" text-anchor="middle" fill="#8492a6" font-size="9.5">Extracts verbatim</text>
+        <text x="355" y="179" text-anchor="middle" fill="#8492a6" font-size="9.5">fields, appends to</text>
+        <text x="355" y="193" text-anchor="middle" fill="#8492a6" font-size="9.5">payload (ETL path)</text>
+        <line x1="418" y1="160" x2="438" y2="160" stroke="#00c8ff" stroke-width="1.2" marker-end="url(#arr)" opacity=".6"/>
+
+        <rect x="430" y="18" width="136" height="38" rx="6" fill="rgba(245,166,35,.08)" stroke="rgba(245,166,35,.3)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="498" y="35" text-anchor="middle" fill="#f5a623" font-size="9" font-family="DM Mono,monospace">Bedrock KB</text>
+        <text x="498" y="49" text-anchor="middle" fill="#f5a623" font-size="9" font-family="DM Mono,monospace">3 Neural Documents</text>
+        <line x1="498" y1="56" x2="498" y2="97" stroke="#f5a623" stroke-width="1" stroke-dasharray="3,3" opacity=".6" marker-end="url(#arr)"/>
+
+        <rect x="442" y="100" width="126" height="120" rx="8" fill="url(#cardGrad)" stroke="rgba(0,200,255,.6)" stroke-width="1.4"/>
+        <text x="505" y="124" text-anchor="middle" fill="#00c8ff" font-size="9" letter-spacing="1" font-family="DM Mono,monospace">λ 03</text>
+        <text x="505" y="142" text-anchor="middle" fill="#f0f4fa" font-size="11" font-weight="600">Ref Copy + RAG</text>
+        <text x="505" y="165" text-anchor="middle" fill="#8492a6" font-size="9.5">Pulls purpose stmts</text>
+        <text x="505" y="179" text-anchor="middle" fill="#8492a6" font-size="9.5">+ lesson objectives,</text>
+        <text x="505" y="193" text-anchor="middle" fill="#8492a6" font-size="9.5">generates via Bloom's</text>
+        <line x1="568" y1="160" x2="588" y2="160" stroke="#00c8ff" stroke-width="1.2" marker-end="url(#arr)" opacity=".6"/>
+
+        <rect x="592" y="100" width="126" height="120" rx="8" fill="url(#cardGrad)" stroke="rgba(0,200,255,.75)" stroke-width="1.6"/>
+        <text x="655" y="124" text-anchor="middle" fill="#00c8ff" font-size="9" letter-spacing="1" font-family="DM Mono,monospace">λ 04 · AGENT</text>
+        <text x="655" y="142" text-anchor="middle" fill="#f0f4fa" font-size="11" font-weight="600">Gen + Translate</text>
+        <text x="655" y="165" text-anchor="middle" fill="#8492a6" font-size="9.5">Summaries, Qs,</text>
+        <text x="655" y="179" text-anchor="middle" fill="#8492a6" font-size="9.5">activities, parent</text>
+        <text x="655" y="193" text-anchor="middle" fill="#8492a6" font-size="9.5">letter · EN + ES</text>
+
+        <rect x="628" y="246" width="110" height="30" rx="6" fill="rgba(0,200,255,.06)" stroke="rgba(0,200,255,.2)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="683" y="265" text-anchor="middle" fill="#8492a6" font-size="9.5" font-family="DM Mono,monospace">DeepL API → ES</text>
+        <line x1="655" y1="220" x2="655" y2="246" stroke="#00c8ff" stroke-width="1" stroke-dasharray="3,3" opacity=".5"/>
+
+        <line x1="718" y1="160" x2="738" y2="160" stroke="#00c8ff" stroke-width="1.2" marker-end="url(#arr)" opacity=".6"/>
+
+        <rect x="742" y="108" width="110" height="104" rx="8" fill="rgba(0,200,255,.07)" stroke="rgba(0,200,255,.5)" stroke-width="1.5"/>
+        <text x="797" y="132" text-anchor="middle" fill="#00c8ff" font-size="9" letter-spacing="1" font-family="DM Mono,monospace">OUTPUT</text>
+        <text x="797" y="150" text-anchor="middle" fill="#f0f4fa" font-size="11" font-weight="600">Module &amp;</text>
+        <text x="797" y="165" text-anchor="middle" fill="#f0f4fa" font-size="11" font-weight="600">Grade Overview</text>
+        <text x="797" y="185" text-anchor="middle" fill="#8492a6" font-size="9.5">EN + ES</text>
+        <text x="797" y="200" text-anchor="middle" fill="#8492a6" font-size="9.5">JSON → Doc</text>
+
+        <rect x="195" y="252" width="430" height="28" rx="6" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <text x="410" y="271" text-anchor="middle" fill="#506070" font-size="9.5" font-family="DM Mono,monospace">CloudWatch — logs, KPI dashboards, error alerts at every Lambda boundary</text>
+      </svg>
+    </div>
+
+    <h3>Stage-by-stage breakdown</h3>
+    <div class="phase-list">
+      <div class="phase">
+        <div class="phase-num">λ1</div>
+        <div class="phase-body">
+          <div class="phase-title">Preprocessor Lambda</div>
+          <div class="phase-desc">Received the raw JSON export of each Google Docs lesson plan. Cleaned structural noise from the Google Docs format, normalised field naming, and produced a well-formed JSON payload ready for downstream processing.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">λ2</div>
+        <div class="phase-body">
+          <div class="phase-title">Strict Copy Lambda</div>
+          <div class="phase-desc">Extracted all verbatim fields — table of contents, lesson names, summative and formative assessments, essential questions, and module vocabulary — from all three lesson plans and appended them directly to the payload. No generation; zero paraphrasing.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">λ3</div>
+        <div class="phase-body">
+          <div class="phase-title">Reference Copy + RAG Lambda</div>
+          <div class="phase-desc">Queried the Bedrock Knowledge Base using structured metadata filters to retrieve the three assigned lesson plans and relevant reference context. Combined purpose statements and lesson objectives from source content to generate the Module Overview Summary — applying Bloom's taxonomy cognitive levels appropriate for teacher and administrator audiences.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">λ4</div>
+        <div class="phase-body">
+          <div class="phase-title">Agent Lambda — Generation + Translation</div>
+          <div class="phase-desc">Wired to a Bedrock Agent, this Lambda generated all remaining sections: detailed summaries, assessment guidance questions, suggested interdisciplinary activities, music-skills integration copy, and a parent-facing home-engagement letter. All parent-letter output was translated from English to Spanish via the DeepL API.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">λ5</div>
+        <div class="phase-body">
+          <div class="phase-title">HTML Injection &amp; Pre-Production Validation</div>
+          <div class="phase-desc">The final Lambda in the chain served two purposes. First, it rendered the completed JSON payload into a production-ready Google Document using a structured HTML template injected via the Google Docs API — keeping all output natively within the company's GSuite environment and matching the publisher's established document format. Second, before injection, it ran every generated section through a configurable guardrails layer that validated content against editorial guidelines, structural requirements, and output schema constraints. Any validation failure triggered a CloudWatch alarm, routing the affected module to an error queue for triage. Outputs that cleared all checks were staged for mandatory human-in-the-loop (HITL) review — the final gate before content was approved for deployment to the curriculum.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-amber" style="margin-top:2rem;">
+      <div class="callout-label">Human-in-the-Loop Gate</div>
+      <p>λ5 was designed as a hard gate, not a soft warning. No output reached the HITL review queue without passing guardrails validation — ensuring that content specialists spent their review time on editorial judgement, not catching structural or schema errors that automation could own. CloudWatch alarms provided immediate visibility into any failure, with enough context to diagnose the root cause without re-running the full pipeline.</p>
+    </div>
+
+    <h3>Project timeline</h3>
+    <div class="phase-list">
+      <div class="phase">
+        <div class="phase-num">1</div>
+        <div class="phase-body">
+          <div class="phase-title">KB Architecture &amp; Neural Document Design <span class="phase-date">November 2025</span></div>
+          <div class="phase-desc">Sole architect and builder. Designed the Bedrock Knowledge Base, authored the three neural documents, and established the pipeline's content segmentation model — splitting all output fields into strict-copy (ETL) and generative (RAG) processing paths before a single Lambda was written.</div>
+          <div class="phase-solo">Solo phase — Director of AI Integration</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">2</div>
+        <div class="phase-body">
+          <div class="phase-title">Module Overview Pipeline — 3rd Grade POC <span class="phase-date">Sprint 1 · Nov–Dec 2025</span></div>
+          <div class="phase-desc">Built the full four-Lambda chain end-to-end and ran a complete proof-of-concept against 3rd grade: ingested all 36 lesson plans, generated 12 module overviews, validated strict-copy fidelity and Bloom's taxonomy alignment with the content team. POC validated and signed off December 2025.</div>
+          <div class="phase-solo">Solo phase — Director of AI Integration</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">3</div>
+        <div class="phase-body">
+          <div class="phase-title">Pipeline Hardening &amp; E2E Automation <span class="phase-date">Sprints 2–3 · Dec 2025–mid-Jan 2026</span></div>
+          <div class="phase-desc">Led the team (2 entry-level engineers) through pipeline hardening: resolved JSON extraction edge cases, standardised section templates, completed Bloom's taxonomy prompt calibration, and wired CloudWatch KPI dashboards at every Lambda boundary.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">4</div>
+        <div class="phase-body">
+          <div class="phase-title">Grade-Level Overview Pipeline — POC <span class="phase-date">Sprint 4 · late Jan 2026</span></div>
+          <div class="phase-desc">Pivoted to the grade-level overview. Added an Amazon EventBridge rule that automatically triggered the grade-level pipeline once 12 module overviews for a given grade had been completed. POC achieved within the sprint.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">5</div>
+        <div class="phase-body">
+          <div class="phase-title">Grade-Level Overview — MVP &amp; K–5 Rollout <span class="phase-date">Sprint 5 · mid-Feb 2026</span></div>
+          <div class="phase-desc">Hardened the grade-level pipeline to MVP. EventBridge trigger validated in production. Scaled across all 6 grade levels — 216+ lesson plans processed, 72 module overviews and 6 grade-level overviews generated, 144 parent letters in English and Spanish delivered to stakeholders.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="section-inner">
+    <p class="eyebrow">04 — Results</p>
+    <h2>From days to hours, at every grade</h2>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-val">216+</div><div class="kpi-label">Lesson plans ingested across K–5</div></div>
+      <div class="kpi-card"><div class="kpi-val">72</div><div class="kpi-label">Module overviews generated</div></div>
+      <div class="kpi-card"><div class="kpi-val">6</div><div class="kpi-label">Grade-level overviews produced</div></div>
+      <div class="kpi-card"><div class="kpi-val">144</div><div class="kpi-label">Parent letters (EN + ES)</div></div>
+      <div class="kpi-card"><div class="kpi-val">&lt;2h</div><div class="kpi-label">End-to-end per grade level</div></div>
+      <div class="kpi-card"><div class="kpi-val">0</div><div class="kpi-label">Strict-copy errors in final output</div></div>
+    </div>
+    <h3>Technology stack</h3>
+    <div class="tech-list">
+      <span class="tech-tag">AWS Bedrock</span>
+      <span class="tech-tag">AWS Lambda</span>
+      <span class="tech-tag">Amazon CloudWatch</span>
+      <span class="tech-tag">OpenSearch Serverless</span>
+      <span class="tech-tag">RAG Architecture</span>
+      <span class="tech-tag">ETL Pipeline</span>
+      <span class="tech-tag">Bedrock Knowledge Base</span>
+      <span class="tech-tag">Bedrock Agent</span>
+      <span class="tech-tag">Amazon EventBridge</span>
+      <span class="tech-tag">DeepL API</span>
+      <span class="tech-tag">Bloom's Taxonomy Engine</span>
+      <span class="tech-tag">JSON / Google Docs API</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="eyebrow">05 — Role &amp; Team</p>
+    <h2>Director of AI Integration</h2>
+    <div class="role-card">
+      <div class="role-block">
+        <h3>My Responsibilities</h3>
+        <p>Full pipeline architecture and design; Bedrock KB setup and neural document authorship; solo POC build (Phases 1–2); Bloom's taxonomy prompt engineering; agent workflow design; EventBridge integration design; team technical direction; stakeholder alignment; QA framework and quality benchmarks.</p>
+      </div>
+      <div class="role-block">
+        <h3>Team Structure</h3>
+        <p>Two entry-level engineers joined from Phase 3 onward, contributing to pipeline hardening, production agent workflow implementation, the grade-level overview build, and the K–5 rollout. I provided technical direction, code review, and architectural decision-making throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lessons">
+  <div class="section-inner">
+    <p class="eyebrow">06 — Lessons Learned</p>
+    <h2>What I'd tell myself at the start</h2>
+    <h3>What worked well</h3>
+    <ul>
+      <li><strong>Bifurcate before you generate.</strong> Separating strict-copy and generative paths at the architecture level — not the prompt level — eliminated an entire category of quality problems.</li>
+      <li><strong>The schema document earns its weight.</strong> Designing the vector index to support metadata-filtered retrieval from the start prevented cross-grade content bleed and made each Lambda query deterministic.</li>
+      <li><strong>POC on the hardest realistic case.</strong> 3rd grade was a real, complete grade — not a toy dataset. Edge cases in extraction surfaced in the POC rather than in production.</li>
+      <li><strong>CloudWatch KPIs from day one.</strong> Having visibility into pipeline performance before scale made the rollout straightforward rather than tense.</li>
+    </ul>
+    <h3>Challenges navigated</h3>
+    <ul>
+      <li>Google Docs JSON exports had minor formatting inconsistencies that required iterative hardening of the preprocessor Lambda — caught early in the POC phase.</li>
+      <li>Bloom's taxonomy level calibration required several prompt engineering iterations and collaborative review sessions before output was consistently on-target.</li>
+      <li>Establishing a shared definition of "good" between the AI team and content specialists was deliberate work. Early alignment reduced review cycle counts significantly from POC to rollout.</li>
+    </ul>
+    <h3>Future opportunities</h3>
+    <ul>
+      <li><strong>Cross-subject expansion:</strong> The same architecture applies directly to maths, ELA, and science curricula.</li>
+      <li><strong>Vertical alignment documents:</strong> Grade-level overview data could roll up into multi-year scope-and-sequence documents.</li>
+      <li><strong>Closed-loop quality management:</strong> CloudWatch KPI thresholds could trigger human review queues for sections scoring below confidence benchmarks.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-label">IP &amp; Confidentiality</div>
+      <p class="footer-note">
+        Original methodology and architecture. Company and client identities anonymised.
+        No proprietary content or trade secrets reproduced. AWS service references are publicly documented.
+      </p>
+    </div>
+    <p class="footer-note"><a href="/">← Back to portfolio</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

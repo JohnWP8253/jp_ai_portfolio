@@ -8,7 +8,7 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const delayClass = ['', ' reveal-d1', ' reveal-d2', ' reveal-d3'];
+const delayClass = ['', ' reveal-d1', ' reveal-d2', ' reveal-d3', ''];
 
 export default function Projects() {
   return (
@@ -27,9 +27,18 @@ export default function Projects() {
                 <div className="tags">
                   {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
                 </div>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="proj-link">
-                  GitHub <ArrowIcon />
-                </a>
+                <div className="proj-links">
+                  {p.caseStudy && (
+                    <a href={p.caseStudy} className="proj-link">
+                      Case Study <ArrowIcon />
+                    </a>
+                  )}
+                  {p.href && (
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="proj-link">
+                      GitHub <ArrowIcon />
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           ))}
