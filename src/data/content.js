@@ -17,6 +17,12 @@ export const expertise = [
     body: '15 years designing curriculum and developing instructors — from corporate language programs to university-level technical education.',
     tags: ['Instructional Design', 'ADDIE', 'Curriculum Dev', 'Technical Writing', 'LMS', 'Facilitation'],
   },
+  {
+    num: '04',
+    title: 'Accessibility & Compliance Engineering',
+    body: 'Built a fine-tuned Custom GPT agent to automate ADA and WCAG 2.2 compliance checks across 500K+ digital art assets — eliminating a 3-revision feedback loop to zero and saving $75K+ in operational costs.',
+    tags: ['WCAG 2.2', 'ADA', 'Custom GPT', 'Python', 'OCR', 'Contrast Analysis', 'HIL', 'Prompt Engineering'],
+  },
 ];
 
 export const projects = [
@@ -33,6 +39,13 @@ export const projects = [
     desc: 'Built a fine-tuned Custom GPT agent that automated ADA and WCAG 2.2 compliance pre-checks for 500K+ digital art assets. Eliminated a 3-revision feedback loop to zero over 2 months with 10 artists — saving $75K+ in operational costs confirmed by the company VP.',
     tags: ['Custom GPT', 'Python', 'WCAG 2.2', 'ADA', 'OCR', 'Prompt Engineering', 'HIL'],
     caseStudy: '/case-study-accessibility-tech-check.html',
+  },
+  {
+    status: 'active',
+    title: 'Premier Properties — Real Estate Site',
+    desc: 'A professional real estate marketing site for a Middle Tennessee REALTOR®. Built with React + Vite and powered by Sanity.io as a headless CMS — the client manages listings, bio, reviews, and market articles through a web dashboard, no coding required.',
+    tags: ['React', 'Vite', 'Sanity.io', 'Headless CMS', 'Vercel', 'GROQ', 'Vanilla CSS'],
+    href: 'https://github.com/Oso-Nice-Sites/isaiah-realestate',
   },
 ];
 
