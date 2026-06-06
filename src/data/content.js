@@ -59,42 +59,66 @@ export const projects = [
 
 export const experience = [
   {
-    company: 'ThriveDX',
-    dates: 'Sept 2023 – Aug 2024',
-    role: 'Sr. Product Owner',
+    company: 'QuaverED',
+    location: 'Hybrid',
+    dates: 'Oct 2025 – Mar 2026',
+    role: 'Director of AI Integration  |  Agile Program Manager / Scrum Master',
     bullets: [
-      'Led launch of AI Software Development Program — full roadmap, Epic/Story mapping, and delivery',
-      'Optimized grading workflows, cutting $10K/month in operational costs',
-      'Ran Agile ceremonies that improved team velocity and production efficiency by 20%',
+      'Built MOB/GLOB: a RAG/ETL/ELT pipeline converting 36 lesson plans into 12 Module Overviews and a Grade Level Overview via AWS Bedrock, Knowledge Base, Lambdas, Converse, Guardrails, CloudWatch, and S3 — each module generated in under 8 seconds in parallel.',
+      'Drove continuous improvement from PoC → MVP → enterprise workflow using HIL review gates and iterative stakeholder feedback loops with content and graphics teams.',
+      'Built a Python/SQL metadata pipeline for the Spanish localization team using AWS Bedrock and Lambda to improve accessible screen copy translation.',
+      'Served as Scrum Master for a two-person team; used Agile coaching 1:1s to adapt Ways of Working — achieving a 78:9 completed-to-backlog task ratio tracked in Jira.',
+    ],
+  },
+  {
+    company: 'QuaverED',
+    location: 'Hybrid',
+    dates: 'Apr 2025 – Oct 2025',
+    role: 'Director of Project Management',
+    bullets: [
+      'Led discovery across all departments: audited Asana workflows, met with every production director to map current-state processes, and defined a phased roadmap of improvements adoptable across all teams.',
+      'Facilitated cross-team conflict resolution sessions to align stakeholders on workflow changes; managed dependencies and risks in Jira and Confluence throughout.',
+      'Co-designed a custom GPT with Art and Accessibility stakeholders to automate WCAG 2.2 compliance review — delivered every requirement and saved an estimated $75K in operational costs.',
+      'Brought Agile methodology, AI tooling, and hands-on training to the PM function; authored a phased transition plan for the incoming PM before promotion.',
     ],
   },
   {
     company: 'ThriveDX',
+    location: 'Remote',
+    dates: 'Sept 2023 – Aug 2024',
+    role: 'Sr. Product Owner',
+    bullets: [
+      'Launched the AI Software Development Program — owned roadmap, backlog, and Epic/Story mapping in Jira.',
+      'Ran all Agile ceremonies as program lead; improved team velocity and production efficiency by 20%.',
+      'Redesigned grading workflow, cutting costs by $10K/month through continuous improvement.',
+    ],
+  },
+  {
+    company: 'ThriveDX',
+    location: 'Remote',
     dates: 'Apr 2022 – Sept 2023',
     role: 'Sr. Manager of Program Performance & Success',
     bullets: [
-      'Drove data analysis across software and data science programs for measurable improvements',
-      'Built KPIs that increased course attendance by 10% and improved engagement',
-      'Maintained real-time dashboards supporting Agile process tracking and decision-making',
+      'Managed Agile delivery, course launches, and real-time dashboards across cross-functional remote teams.',
+      'Established KPIs that increased course attendance by 10% through data-informed stakeholder alignment.',
     ],
   },
   {
     company: 'E-Performax',
+    location: 'Remote',
     dates: 'Apr 2017 – Mar 2020',
     role: 'Comms Training Developer, Instructional Design',
     bullets: [
-      'Designed and facilitated communications training programs at scale',
-      'Applied Agile methods to course development cycles and delivery',
+      'Designed enterprise communications training; used data analysis to measure effectiveness and improve curriculum.',
     ],
   },
   {
     company: 'EF Education',
+    location: 'Surabaya, Indonesia',
     dates: 'Sept 2005 – May 2012',
-    role: 'Director of Studies & Corporate Language Learning',
+    role: 'Director of Studies — Corporate Language Learning Solutions',
     bullets: [
-      'Managed contracts and programs for Coca-Cola, Alstom Power, and other global clients',
-      'Scaled enrollment and program adoption by 100% over three years',
-      'Led professional development for international instructional staff',
+      'Led corporate training programs for clients including Coca-Cola and Alstom Power; scaled enrollment 100% in three years.',
     ],
   },
 ];

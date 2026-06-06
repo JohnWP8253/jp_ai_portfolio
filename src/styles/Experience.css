@@ -17,6 +17,7 @@
   margin-bottom: 0.2rem;
 }
 .exp-dates { color: var(--muted); }
+.exp-location { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
 
 .exp-role-title {
   font-size: 1.05rem;
