@@ -10,7 +10,7 @@ export default function Hero() {
             <h1 className="hero-name" id="hero-name">John<br />Pendergrass</h1>
           </div>
           <div className="hero-photo-wrap">
-            <img src="/john-pendergrass.jpg" alt="John Pendergrass" className="hero-photo" />
+            <img src={`${import.meta.env.BASE_URL}john-pendergrass.jpg`} alt="John Pendergrass" className="hero-photo" />
           </div>
         </div>
         <div className="hero-bottom">
