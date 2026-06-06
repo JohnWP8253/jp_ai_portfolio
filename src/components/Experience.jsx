@@ -12,6 +12,7 @@ export default function Experience() {
               <div className="exp-meta">
                 <p className="exp-company">{job.company}</p>
                 <p className="exp-dates">{job.dates}</p>
+                {job.location && <p className="exp-location">{job.location}</p>}
               </div>
               <div>
                 <h3 className="exp-role-title">{job.role}</h3>
