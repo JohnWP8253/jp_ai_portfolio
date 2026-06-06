@@ -38,6 +38,11 @@ export default function Projects() {
                       GitHub <ArrowIcon />
                     </a>
                   )}
+                  {p.site && (
+                    <a href={p.site} target="_blank" rel="noopener noreferrer" className="proj-link">
+                      Live Site <ArrowIcon />
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
