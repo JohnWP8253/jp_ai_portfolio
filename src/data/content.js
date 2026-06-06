@@ -29,31 +29,10 @@ export const projects = [
   },
   {
     status: 'active',
-    title: 'Mushroom Species Classifier',
-    desc: 'A fine-tuned image classification model trained on foraging data to identify mushroom species from field photos. Built on Apple Silicon with MLX and deployed via Gradio.',
-    tags: ['Python', 'MLX', 'Hugging Face', 'Gradio'],
-    href: 'https://github.com/JohnWP8253',
-  },
-  {
-    status: 'active',
-    title: "Forager's Journal — RAG App",
-    desc: 'A retrieval-augmented generation app for querying a knowledge base of field guides, cultivation notes, and mushroom safety data using natural language.',
-    tags: ['LangChain', 'ChromaDB', 'LlamaIndex', 'Ollama'],
-    href: 'https://github.com/JohnWP8253',
-  },
-  {
-    status: 'active',
-    title: 'Cottagecore Assistant',
-    desc: 'A multi-domain agentic assistant spanning gardening, crochet, mycology, dogs, and travel. Full RAG + agent architecture with tool use and persistent memory.',
-    tags: ['CrewAI', 'LangChain', 'Multi-agent', 'ChromaDB'],
-    href: 'https://github.com/JohnWP8253',
-  },
-  {
-    status: 'planned',
-    title: 'AI Transformation Playbook',
-    desc: 'An interactive guide and toolset for organizations adopting AI workflows — drawing on Agile transformation frameworks and instructional design principles.',
-    tags: ['LLM Integration', 'Agile Frameworks', 'Next.js'],
-    href: 'https://github.com/JohnWP8253',
+    title: 'Accessibility Tech Check',
+    desc: 'Built a fine-tuned Custom GPT agent that automated ADA and WCAG 2.2 compliance pre-checks for 500K+ digital art assets. Eliminated a 3-revision feedback loop to zero over 2 months with 10 artists — saving $75K+ in operational costs confirmed by the company VP.',
+    tags: ['Custom GPT', 'Python', 'WCAG 2.2', 'ADA', 'OCR', 'Prompt Engineering', 'HIL'],
+    caseStudy: '/case-study-accessibility-tech-check.html',
   },
 ];
 
