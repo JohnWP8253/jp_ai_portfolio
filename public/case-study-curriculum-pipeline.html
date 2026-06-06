@@ -181,7 +181,8 @@
   /* — PHASE LIST — */
   .phase-list { display: flex; flex-direction: column; margin: 1.5rem 0; }
   .phase {
-    display: grid; grid-template-columns: 56px 1fr;
+    display: grid; grid-template-columns: 52px 1fr;
+    min-width: 0;
     border: 1px solid var(--hairline); border-bottom: none;
     overflow: hidden;
   }
@@ -189,16 +190,37 @@
   .phase:last-child { border-bottom: 1px solid var(--hairline); border-radius: 0 0 2px 2px; }
   .phase:hover { background: var(--off); }
   .phase-num {
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.88rem; font-weight: 700; color: var(--accent);
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 1.2rem;
+    font-size: 0.82rem; font-weight: 700; color: var(--accent);
     border-right: 1px solid var(--hairline); background: var(--off);
+    flex-shrink: 0;
   }
-  .phase-body { padding: 1.2rem 1.5rem; }
-  .phase-title { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 0.4rem; }
-  .phase-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin: 0; }
+  .phase-body { padding: 1.2rem 1.5rem; min-width: 0; }
+  .phase-title {
+    font-size: 0.92rem; font-weight: 700; color: var(--black);
+    margin-bottom: 0.4rem; line-height: 1.4;
+    overflow-wrap: break-word; word-break: break-word;
+  }
+  .phase-title .phase-date {
+    display: block; font-weight: 400; font-size: 0.78rem;
+    color: var(--muted); margin-top: 0.15rem; letter-spacing: 0;
+  }
+  .phase-desc {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin: 0;
+    overflow-wrap: break-word; word-break: break-word;
+  }
   .phase-solo {
     font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--accent); margin-top: 0.5rem;
+  }
+
+  @media (max-width: 540px) {
+    .phase { grid-template-columns: 40px 1fr; }
+    .phase-num { font-size: 0.72rem; padding-top: 1rem; }
+    .phase-body { padding: 1rem 1rem; }
+    .phase-title { font-size: 0.85rem; }
+    .phase-desc { font-size: 0.82rem; }
   }
 
   /* — SPLIT TABLE — */
@@ -551,8 +573,6 @@
           <div class="phase-desc">Wired to a Bedrock Agent, this Lambda generated all remaining sections: detailed summaries, assessment guidance questions, suggested interdisciplinary activities, music-skills integration copy, and a parent-facing home-engagement letter. All parent-letter output was translated from English to Spanish via the DeepL API.</div>
         </div>
       </div>
-    </div>
-
       <div class="phase">
         <div class="phase-num">λ5</div>
         <div class="phase-body">
@@ -572,7 +592,7 @@
       <div class="phase">
         <div class="phase-num">1</div>
         <div class="phase-body">
-          <div class="phase-title">KB Architecture &amp; Neural Document Design <span style="font-weight:400;color:var(--slate);font-size:.8rem;margin-left:.5rem;">November 2025</span></div>
+          <div class="phase-title">KB Architecture &amp; Neural Document Design <span class="phase-date">November 2025</span></div>
           <div class="phase-desc">Sole architect and builder. Designed the Bedrock Knowledge Base, authored the three neural documents, and established the pipeline's content segmentation model — splitting all output fields into strict-copy (ETL) and generative (RAG) processing paths before a single Lambda was written.</div>
           <div class="phase-solo">Solo phase — Director of AI Integration</div>
         </div>
@@ -580,7 +600,7 @@
       <div class="phase">
         <div class="phase-num">2</div>
         <div class="phase-body">
-          <div class="phase-title">Module Overview Pipeline — 3rd Grade POC <span style="font-weight:400;color:var(--slate);font-size:.8rem;margin-left:.5rem;">Sprint 1 · Nov–Dec 2025</span></div>
+          <div class="phase-title">Module Overview Pipeline — 3rd Grade POC <span class="phase-date">Sprint 1 · Nov–Dec 2025</span></div>
           <div class="phase-desc">Built the full four-Lambda chain end-to-end and ran a complete proof-of-concept against 3rd grade: ingested all 36 lesson plans, generated 12 module overviews, validated strict-copy fidelity and Bloom's taxonomy alignment with the content team. POC validated and signed off December 2025.</div>
           <div class="phase-solo">Solo phase — Director of AI Integration</div>
         </div>
@@ -588,21 +608,21 @@
       <div class="phase">
         <div class="phase-num">3</div>
         <div class="phase-body">
-          <div class="phase-title">Pipeline Hardening &amp; E2E Automation <span style="font-weight:400;color:var(--slate);font-size:.8rem;margin-left:.5rem;">Sprints 2–3 · Dec 2025–mid-Jan 2026</span></div>
+          <div class="phase-title">Pipeline Hardening &amp; E2E Automation <span class="phase-date">Sprints 2–3 · Dec 2025–mid-Jan 2026</span></div>
           <div class="phase-desc">Led the team (2 entry-level engineers) through pipeline hardening: resolved JSON extraction edge cases, standardised section templates, completed Bloom's taxonomy prompt calibration, and wired CloudWatch KPI dashboards at every Lambda boundary.</div>
         </div>
       </div>
       <div class="phase">
         <div class="phase-num">4</div>
         <div class="phase-body">
-          <div class="phase-title">Grade-Level Overview Pipeline — POC <span style="font-weight:400;color:var(--slate);font-size:.8rem;margin-left:.5rem;">Sprint 4 · late Jan 2026</span></div>
+          <div class="phase-title">Grade-Level Overview Pipeline — POC <span class="phase-date">Sprint 4 · late Jan 2026</span></div>
           <div class="phase-desc">Pivoted to the grade-level overview. Added an Amazon EventBridge rule that automatically triggered the grade-level pipeline once 12 module overviews for a given grade had been completed. POC achieved within the sprint.</div>
         </div>
       </div>
       <div class="phase">
         <div class="phase-num">5</div>
         <div class="phase-body">
-          <div class="phase-title">Grade-Level Overview — MVP &amp; K–5 Rollout <span style="font-weight:400;color:var(--slate);font-size:.8rem;margin-left:.5rem;">Sprint 5 · mid-Feb 2026</span></div>
+          <div class="phase-title">Grade-Level Overview — MVP &amp; K–5 Rollout <span class="phase-date">Sprint 5 · mid-Feb 2026</span></div>
           <div class="phase-desc">Hardened the grade-level pipeline to MVP. EventBridge trigger validated in production. Scaled across all 6 grade levels — 216+ lesson plans processed, 72 module overviews and 6 grade-level overviews generated, 144 parent letters in English and Spanish delivered to stakeholders.</div>
         </div>
       </div>
