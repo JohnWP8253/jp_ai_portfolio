@@ -4,8 +4,15 @@ export default function Hero() {
   return (
     <section id="hero" aria-labelledby="hero-name">
       <div className="hero-inner">
-        <p className="hero-kicker">Lebanon, Tennessee &mdash; Available for AI &amp; ML roles</p>
-        <h1 className="hero-name" id="hero-name">John<br />Pendergrass</h1>
+        <div className="hero-top">
+          <div className="hero-text">
+            <p className="hero-kicker">Lebanon, Tennessee &mdash; Available for AI &amp; ML roles</p>
+            <h1 className="hero-name" id="hero-name">John<br />Pendergrass</h1>
+          </div>
+          <div className="hero-photo-wrap">
+            <img src="/john-pendergrass.jpg" alt="John Pendergrass" className="hero-photo" />
+          </div>
+        </div>
         <div className="hero-bottom">
           <p className="hero-tagline">
             I don&apos;t push from behind or pull from ahead. I walk alongside — that&apos;s what educating actually is.
