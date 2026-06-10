@@ -13,7 +13,7 @@
 .exp-meta { font-size: 0.78rem; line-height: 1.5; }
 .exp-company {
   font-weight: 700;
-  color: var(--black);
+  color: var(--muted-teal);
   margin-bottom: 0.2rem;
 }
 .exp-dates { color: var(--muted); }

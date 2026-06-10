@@ -20,7 +20,7 @@ export default function Projects() {
           {projects.map((p, i) => (
             <article className={`proj-card reveal${delayClass[i]}`} key={p.title}>
               <p className={`proj-status status-${p.status}`}>
-                {p.status === 'active' ? '● Active' : '○ Planned'}
+                {p.status === 'active' ? '● Active' : p.status === 'delivered' ? '✓ Completed' : '○ Planned'}
               </p>
               <h3 className="proj-title">{p.title}</h3>
               <p className="proj-desc">{p.desc}</p>
