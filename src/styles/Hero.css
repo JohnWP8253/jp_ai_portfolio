@@ -35,26 +35,34 @@
 }
 
 .hero-top {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 3rem;
   margin-bottom: 0;
 }
 
 .hero-text {
-  flex: 1;
   min-width: 0;
 }
 
 .hero-photo-wrap {
-  flex-shrink: 0;
-  width: clamp(140px, 18vw, 220px);
+  width: clamp(180px, 22vw, 300px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--hairline);
+  position: relative;
   animation: fadeUp 0.7s 0.15s ease both;
+  /* remove hard border — gradient fade handles the edge */
+}
+
+.hero-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 52%, var(--eggshell) 78%);
+  pointer-events: none;
 }
 
 .hero-photo {
@@ -67,7 +75,7 @@
 }
 
 .hero-name {
-  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-size: clamp(3rem, 6.5vw, 7rem);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -104,8 +112,24 @@
 
 @media (max-width: 860px) {
   .hero { padding-bottom: 3rem; }
-  .hero-top { align-items: center; }
-  .hero-photo-wrap { width: clamp(100px, 22vw, 140px); }
+  .hero-top {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .hero-photo-wrap {
+    width: clamp(120px, 35vw, 180px);
+    margin: 0 auto 1.5rem;
+    order: -1;
+  }
+  .hero-kicker {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hero-name {
+    font-size: clamp(1.6rem, 9vw, 3rem);
+  }
   .hero-bottom {
     grid-template-columns: 1fr;
     gap: 1.5rem;
