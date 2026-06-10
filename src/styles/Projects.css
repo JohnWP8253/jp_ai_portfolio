@@ -24,8 +24,9 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-.status-active  { color: var(--burnt-peach); }
-.status-planned { color: var(--muted); }
+.status-active    { color: var(--burnt-peach); }
+.status-delivered { color: var(--muted-teal); }
+.status-planned   { color: var(--muted); }
 
 .proj-title {
   font-size: 1.15rem;
