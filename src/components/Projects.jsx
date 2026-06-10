@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { projects } from '../data/content';
 import '../styles/Projects.css';
 
@@ -29,9 +30,9 @@ export default function Projects() {
                 </div>
                 <div className="proj-links">
                   {p.caseStudy && (
-                    <a href={p.caseStudy} className="proj-link">
+                    <Link to={p.caseStudy} className="proj-link">
                       Case Study <ArrowIcon />
-                    </a>
+                    </Link>
                   )}
                   {p.href && (
                     <a href={p.href} target="_blank" rel="noopener noreferrer" className="proj-link">

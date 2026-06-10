@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/globals.css';
 
 import Navbar      from './components/Navbar';
@@ -11,7 +12,10 @@ import Credentials from './components/Credentials';
 import Contact     from './components/Contact';
 import Footer      from './components/Footer';
 
-export default function App() {
+import CaseStudyCurriculumPipeline    from './pages/CaseStudyCurriculumPipeline';
+import CaseStudyAccessibilityTechCheck from './pages/CaseStudyAccessibilityTechCheck';
+
+function Portfolio() {
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); }),
@@ -36,5 +40,17 @@ export default function App() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter basename="/jp_ai_portfolio">
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/case-study-curriculum-pipeline" element={<CaseStudyCurriculumPipeline />} />
+        <Route path="/case-study-accessibility-tech-check" element={<CaseStudyAccessibilityTechCheck />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

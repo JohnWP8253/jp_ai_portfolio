@@ -31,14 +31,14 @@ export const projects = [
     title: 'K–5 Curriculum Content Pipeline',
     desc: 'Designed and delivered a RAG + ETL pipeline on AWS Bedrock — solo architect through POC, then led a two-engineer team to production across 6 grade levels. 216+ lesson plans processed, 72 module overviews, 6 grade-level overviews, and 144 bilingual parent letters produced.',
     tags: ['AWS Bedrock', 'Lambda', 'S3', 'RAG', 'ETL', 'Bedrock Knowledge Base', 'DeepL API'],
-    caseStudy: '/case-study-curriculum-pipeline.html',
+    caseStudy: '/case-study-curriculum-pipeline',
   },
   {
     status: 'QuaverEd',
     title: 'Accessibility Tech Check',
     desc: 'Built a fine-tuned Custom GPT agent that automated ADA and WCAG 2.2 compliance pre-checks for 500K+ digital art assets. Eliminated a 3-revision feedback loop to zero over 2 months with 10 artists — saving $75K+ in operational costs confirmed by the company VP.',
     tags: ['Custom GPT', 'Python', 'WCAG 2.2', 'ADA', 'OCR', 'Prompt Engineering', 'HIL'],
-    caseStudy: '/case-study-accessibility-tech-check.html',
+    caseStudy: '/case-study-accessibility-tech-check',
   },
   {
     status: 'active',
