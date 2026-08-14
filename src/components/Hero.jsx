@@ -2,7 +2,7 @@ import '../styles/Hero.css';
 
 export default function Hero() {
   return (
-    <section id="hero" aria-labelledby="hero-name">
+    <section id="hero" className="hero" aria-labelledby="hero-name">
       <div className="hero-inner">
         <div className="hero-top">
           <div className="hero-text">

@@ -36,7 +36,7 @@
 
 .hero-top {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
   gap: 3rem;
   margin-bottom: 0;
@@ -61,7 +61,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, transparent 52%, var(--eggshell) 78%);
+  background: radial-gradient(circle, transparent 42%, var(--eggshell) 88%);
   pointer-events: none;
 }
 
@@ -123,9 +123,6 @@
   }
   .hero-kicker {
     font-size: 0.65rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .hero-name {
     font-size: clamp(1.6rem, 9vw, 3rem);
