@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { experience } from '../data/content';
 import '../styles/Experience.css';
 
@@ -17,7 +18,21 @@ export default function Experience() {
               <div>
                 <h3 className="exp-role-title">{job.role}</h3>
                 <ul className="exp-bullets">
-                  {job.bullets.map((b) => <li key={b}>{b}</li>)}
+                  {job.bullets.map((b) => {
+                    const text = typeof b === 'string' ? b : b.text;
+                    const caseStudy = typeof b === 'string' ? null : b.caseStudy;
+                    return (
+                      <li key={text}>
+                        {text}
+                        {caseStudy && (
+                          <>
+                            {' '}
+                            <Link to={caseStudy} className="exp-bullet-link">Case Study →</Link>
+                          </>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

@@ -46,6 +46,11 @@
   left: 0;
   color: var(--hairline);
 }
+.exp-bullet-link {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
 
 .exp-linkedin {
   padding-top: 1.5rem;
