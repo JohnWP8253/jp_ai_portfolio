@@ -37,7 +37,7 @@
 .hero-top {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
+  align-items: center;
   gap: 3rem;
   margin-bottom: 0;
 }
@@ -47,7 +47,7 @@
 }
 
 .hero-photo-wrap {
-  width: clamp(180px, 22vw, 300px);
+  width: clamp(200px, 24vw, 340px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
@@ -117,7 +117,7 @@
     grid-template-rows: auto auto;
   }
   .hero-photo-wrap {
-    width: clamp(120px, 35vw, 180px);
+    width: clamp(140px, 38vw, 200px);
     margin: 0 auto 1.5rem;
     order: -1;
   }
