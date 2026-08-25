@@ -30,7 +30,7 @@ export default function CaseStudyAccessibilityTechCheck() {
             <p className="cs-hero-sub">
               How a purpose-built WCAG 2.2 GPT reduced art-accessibility revision rounds from an
               average of three to zero — saving an estimated $75K and fundamentally changing how
-              an EdTech company's art team approached accessibility compliance from day one.
+              an EdTech company&apos;s art team approached accessibility compliance from day one.
             </p>
             <div className="cs-hero-meta">
               <div className="cs-meta-chip">Role: <span>Director, Project Management</span></div>

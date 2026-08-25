@@ -80,7 +80,7 @@ export default function CaseStudyCurriculumPipeline() {
           <h3>Core constraints</h3>
           <ul>
             <li><strong>Strict-copy fidelity:</strong> Several sections required verbatim extraction — no paraphrasing allowed. Any error here would propagate to teacher-facing materials.</li>
-            <li><strong>Bloom's taxonomy alignment:</strong> Generative copy needed to reflect specific cognitive levels for teacher vs. administrator audiences.</li>
+            <li><strong>Bloom&apos;s taxonomy alignment:</strong> Generative copy needed to reflect specific cognitive levels for teacher vs. administrator audiences.</li>
             <li><strong>Multilingual output:</strong> Parent-facing letters required accurate Spanish translation.</li>
             <li><strong>Scale + consistency:</strong> Quality and formatting had to remain identical across 72 modules and 6 grade levels.</li>
             <li><strong>Auditability:</strong> Every generated section needed to be traceable back to its source content.</li>
@@ -97,7 +97,7 @@ export default function CaseStudyCurriculumPipeline() {
             working solo in this first phase. The KB served not just as a retrieval store but as a
             <strong> structured reference system</strong> that grounded all downstream generation. I designed
             what I called the <em>three neural documents</em>: a trio of interoperable JSON files that,
-            together, gave the agent a complete and queryable model of the curriculum's structure.
+            together, gave the agent a complete and queryable model of the curriculum&apos;s structure.
           </p>
 
           <div className="cs-kb-grid">
@@ -116,7 +116,7 @@ export default function CaseStudyCurriculumPipeline() {
               <div className="cs-kb-card-desc">
                 Defined every key referenced in the manifest: data type, expected format, valid values,
                 content description, and whether the field was strict-copy (ETL) or generative (RAG).
-                This document was the pipeline's source of truth for output validation.
+                This document was the pipeline&apos;s source of truth for output validation.
               </div>
             </div>
             <div className="cs-kb-card">
@@ -136,7 +136,7 @@ export default function CaseStudyCurriculumPipeline() {
 
           <div className="cs-callout">
             <div className="cs-callout-label">Design Rationale</div>
-            <p>The schema document was the key to making retrieval <em>precise</em>, not just <em>semantic</em>. By storing grade level, module number, and section type as indexed metadata attributes alongside the vector embeddings, Lambda functions could retrieve content like "all strict-copy fields from Grade 3, Module 4" using a structured filter — eliminating ambiguity and ensuring the right lesson plans always grounded the right outputs.</p>
+            <p>The schema document was the key to making retrieval <em>precise</em>, not just <em>semantic</em>. By storing grade level, module number, and section type as indexed metadata attributes alongside the vector embeddings, Lambda functions could retrieve content like &ldquo;all strict-copy fields from Grade 3, Module 4&rdquo; using a structured filter — eliminating ambiguity and ensuring the right lesson plans always grounded the right outputs.</p>
           </div>
 
           <h3>Content segmentation</h3>
@@ -157,7 +157,7 @@ export default function CaseStudyCurriculumPipeline() {
               <div className="cs-split-item">Assessment Guidance Questions</div>
               <div className="cs-split-item">Interdisciplinary Activities (Maths, Literacy)</div>
               <div className="cs-split-item">Music &amp; Skills Integration Copy</div>
-              <div className="cs-split-item">Teacher &amp; Admin Copy (Bloom's Taxonomy)</div>
+              <div className="cs-split-item">Teacher &amp; Admin Copy (Bloom&apos;s Taxonomy)</div>
               <div className="cs-split-item">Parent Home-Engagement Letter (EN + ES)</div>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default function CaseStudyCurriculumPipeline() {
               <text x="505" y="142" textAnchor="middle" fill="#f0f4fa" fontSize="11" fontWeight="600">Ref Copy + RAG</text>
               <text x="505" y="165" textAnchor="middle" fill="#8492a6" fontSize="9.5">Pulls purpose stmts</text>
               <text x="505" y="179" textAnchor="middle" fill="#8492a6" fontSize="9.5">+ lesson objectives,</text>
-              <text x="505" y="193" textAnchor="middle" fill="#8492a6" fontSize="9.5">generates via Bloom's</text>
+              <text x="505" y="193" textAnchor="middle" fill="#8492a6" fontSize="9.5">generates via Bloom&apos;s</text>
               <line x1="568" y1="160" x2="588" y2="160" stroke="#00c8ff" strokeWidth="1.2" markerEnd="url(#arr)" opacity=".6" />
 
               <rect x="592" y="100" width="126" height="120" rx="8" fill="url(#cardGrad)" stroke="rgba(0,200,255,.75)" strokeWidth="1.6" />
@@ -270,7 +270,7 @@ export default function CaseStudyCurriculumPipeline() {
               <div className="cs-phase-num">λ3</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">Reference Copy + RAG Lambda</div>
-                <div className="cs-phase-desc">Queried the Bedrock Knowledge Base using structured metadata filters to retrieve the three assigned lesson plans and relevant reference context. Combined purpose statements and lesson objectives from source content to generate the Module Overview Summary — applying Bloom's taxonomy cognitive levels appropriate for teacher and administrator audiences.</div>
+                <div className="cs-phase-desc">Queried the Bedrock Knowledge Base using structured metadata filters to retrieve the three assigned lesson plans and relevant reference context. Combined purpose statements and lesson objectives from source content to generate the Module Overview Summary — applying Bloom&apos;s taxonomy cognitive levels appropriate for teacher and administrator audiences.</div>
               </div>
             </div>
             <div className="cs-phase">
@@ -284,7 +284,7 @@ export default function CaseStudyCurriculumPipeline() {
               <div className="cs-phase-num">λ5</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">HTML Injection &amp; Pre-Production Validation</div>
-                <div className="cs-phase-desc">The final Lambda in the chain served two purposes. First, it rendered the completed JSON payload into a production-ready Google Document using a structured HTML template injected via the Google Docs API — keeping all output natively within the company's GSuite environment and matching the publisher's established document format. Second, before injection, it ran every generated section through a configurable guardrails layer that validated content against editorial guidelines, structural requirements, and output schema constraints. Any validation failure triggered a CloudWatch alarm, routing the affected module to an error queue for triage. Outputs that cleared all checks were staged for mandatory human-in-the-loop (HITL) review — the final gate before content was approved for deployment to the curriculum.</div>
+                <div className="cs-phase-desc">The final Lambda in the chain served two purposes. First, it rendered the completed JSON payload into a production-ready Google Document using a structured HTML template injected via the Google Docs API — keeping all output natively within the company&apos;s GSuite environment and matching the publisher&apos;s established document format. Second, before injection, it ran every generated section through a configurable guardrails layer that validated content against editorial guidelines, structural requirements, and output schema constraints. Any validation failure triggered a CloudWatch alarm, routing the affected module to an error queue for triage. Outputs that cleared all checks were staged for mandatory human-in-the-loop (HITL) review — the final gate before content was approved for deployment to the curriculum.</div>
               </div>
             </div>
           </div>
@@ -300,7 +300,7 @@ export default function CaseStudyCurriculumPipeline() {
               <div className="cs-phase-num">1</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">KB Architecture &amp; Neural Document Design <span className="cs-phase-date">November 2025</span></div>
-                <div className="cs-phase-desc">Sole architect and builder. Designed the Bedrock Knowledge Base, authored the three neural documents, and established the pipeline's content segmentation model — splitting all output fields into strict-copy (ETL) and generative (RAG) processing paths before a single Lambda was written.</div>
+                <div className="cs-phase-desc">Sole architect and builder. Designed the Bedrock Knowledge Base, authored the three neural documents, and established the pipeline&apos;s content segmentation model — splitting all output fields into strict-copy (ETL) and generative (RAG) processing paths before a single Lambda was written.</div>
                 <div className="cs-phase-solo">Solo phase — Director of AI Integration</div>
               </div>
             </div>
@@ -308,7 +308,7 @@ export default function CaseStudyCurriculumPipeline() {
               <div className="cs-phase-num">2</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">Module Overview Pipeline — 3rd Grade POC <span className="cs-phase-date">Sprint 1 · Nov–Dec 2025</span></div>
-                <div className="cs-phase-desc">Built the full four-Lambda chain end-to-end and ran a complete proof-of-concept against 3rd grade: ingested all 36 lesson plans, generated 12 module overviews, validated strict-copy fidelity and Bloom's taxonomy alignment with the content team. POC validated and signed off December 2025.</div>
+                <div className="cs-phase-desc">Built the full four-Lambda chain end-to-end and ran a complete proof-of-concept against 3rd grade: ingested all 36 lesson plans, generated 12 module overviews, validated strict-copy fidelity and Bloom&apos;s taxonomy alignment with the content team. POC validated and signed off December 2025.</div>
                 <div className="cs-phase-solo">Solo phase — Director of AI Integration</div>
               </div>
             </div>
@@ -316,7 +316,7 @@ export default function CaseStudyCurriculumPipeline() {
               <div className="cs-phase-num">3</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">Pipeline Hardening &amp; E2E Automation <span className="cs-phase-date">Sprints 2–3 · Dec 2025–mid-Jan 2026</span></div>
-                <div className="cs-phase-desc">Led the team (2 entry-level engineers) through pipeline hardening: resolved JSON extraction edge cases, standardised section templates, completed Bloom's taxonomy prompt calibration, and wired CloudWatch KPI dashboards at every Lambda boundary.</div>
+                <div className="cs-phase-desc">Led the team (2 entry-level engineers) through pipeline hardening: resolved JSON extraction edge cases, standardised section templates, completed Bloom&apos;s taxonomy prompt calibration, and wired CloudWatch KPI dashboards at every Lambda boundary.</div>
               </div>
             </div>
             <div className="cs-phase">
@@ -361,7 +361,7 @@ export default function CaseStudyCurriculumPipeline() {
             <span className="cs-tech-tag">Bedrock Agent</span>
             <span className="cs-tech-tag">Amazon EventBridge</span>
             <span className="cs-tech-tag">DeepL API</span>
-            <span className="cs-tech-tag">Bloom's Taxonomy Engine</span>
+            <span className="cs-tech-tag">Bloom&apos;s Taxonomy Engine</span>
             <span className="cs-tech-tag">JSON / Google Docs API</span>
             <span className="cs-tech-tag">Scrum</span>
             <span className="cs-tech-tag">Jira Cloud</span>
@@ -376,7 +376,7 @@ export default function CaseStudyCurriculumPipeline() {
           <div className="cs-role-card">
             <div className="cs-role-block">
               <h3>My Responsibilities</h3>
-              <p>Full pipeline architecture and design; Bedrock KB setup and neural document authorship; solo POC build (Phases 1–2); Bloom's taxonomy prompt engineering; agent workflow design; EventBridge integration design; team technical direction; stakeholder alignment; QA framework and quality benchmarks.</p>
+              <p>Full pipeline architecture and design; Bedrock KB setup and neural document authorship; solo POC build (Phases 1–2); Bloom&apos;s taxonomy prompt engineering; agent workflow design; EventBridge integration design; team technical direction; stakeholder alignment; QA framework and quality benchmarks.</p>
             </div>
             <div className="cs-role-block">
               <h3>Team Structure</h3>
@@ -407,7 +407,7 @@ export default function CaseStudyCurriculumPipeline() {
       <section id="lessons">
         <div className="cs-section-inner">
           <p className="cs-eyebrow">06 — Lessons Learned</p>
-          <h2>What I'd tell myself at the start</h2>
+          <h2>What I&apos;d tell myself at the start</h2>
           <h3>What worked well</h3>
           <ul>
             <li><strong>Bifurcate before you generate.</strong> Separating strict-copy and generative paths at the architecture level — not the prompt level — eliminated an entire category of quality problems.</li>
@@ -418,8 +418,8 @@ export default function CaseStudyCurriculumPipeline() {
           <h3>Challenges navigated</h3>
           <ul>
             <li>Google Docs JSON exports had minor formatting inconsistencies that required iterative hardening of the preprocessor Lambda — caught early in the POC phase.</li>
-            <li>Bloom's taxonomy level calibration required several prompt engineering iterations and collaborative review sessions before output was consistently on-target.</li>
-            <li>Establishing a shared definition of "good" between the AI team and content specialists was deliberate work. Early alignment reduced review cycle counts significantly from POC to rollout.</li>
+            <li>Bloom&apos;s taxonomy level calibration required several prompt engineering iterations and collaborative review sessions before output was consistently on-target.</li>
+            <li>Establishing a shared definition of &ldquo;good&rdquo; between the AI team and content specialists was deliberate work. Early alignment reduced review cycle counts significantly from POC to rollout.</li>
           </ul>
           <h3>Future opportunities</h3>
           <ul>
