@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-top">
           <div className="hero-text">
-            <p className="hero-kicker">Lebanon, Tennessee &mdash; Available for AI &amp; ML roles</p>
+            <p className="hero-kicker">Lebanon, Tennessee &mdash; Dev, AI and TPM roles</p>
             <h1 className="hero-name" id="hero-name">John<br />Pendergrass<span className="hero-name-suffix">, CSM</span></h1>
           </div>
           <div className="hero-photo-wrap">
