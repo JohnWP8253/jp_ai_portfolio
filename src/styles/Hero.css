@@ -84,14 +84,6 @@
   animation: fadeUp 0.7s 0.2s ease both;
 }
 
-.hero-name-suffix {
-  font-size: 0.26em;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--accent);
-  vertical-align: middle;
-}
-
 .hero-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
