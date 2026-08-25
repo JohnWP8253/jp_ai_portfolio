@@ -64,10 +64,10 @@ export const experience = [
     dates: 'Oct 2025 – Mar 2026',
     role: 'Director of AI Integration  |  Agile Program Manager / Scrum Master',
     bullets: [
-      'Built MOB/GLOB: a RAG/ETL/ELT pipeline converting 36 lesson plans into 12 Module Overviews and a Grade Level Overview via AWS Bedrock, Knowledge Base, Lambdas, Converse, Guardrails, CloudWatch, and S3 — each module generated in under 8 seconds in parallel.',
-      'Drove continuous improvement from PoC → MVP → enterprise workflow using HIL review gates and iterative stakeholder feedback loops with content and graphics teams.',
-      'Built a Python/SQL metadata pipeline for the Spanish localization team using AWS Bedrock and Lambda to improve accessible screen copy translation.',
-      'Served as Scrum Master for a two-person team; used Agile coaching 1:1s to adapt Ways of Working — achieving a 78:9 completed-to-backlog task ratio tracked in Jira.',
+      { text: 'Built MOB/GLOB: a RAG/ETL/ELT pipeline converting 36 lesson plans into 12 Module Overviews and a Grade Level Overview via AWS Bedrock, Knowledge Base, Lambdas, Converse, Guardrails, CloudWatch, and S3 — generating full K–5 coverage (6 grade levels) in 8 minutes.', caseStudy: '/case-study-curriculum-pipeline' },
+      'Sole subject matter expert on the project — self-taught AWS Bedrock and Azure DevOps from documentation with no SME to lean on; drove continuous improvement from PoC → MVP → enterprise workflow using HIL review gates and iterative stakeholder feedback loops with content and graphics teams.',
+      'Hired, trained, and mentored two entry-level AI specialists while acting as both Scrum Master and Product Owner; used Agile coaching 1:1s to adapt Ways of Working — achieving a 78:9 completed-to-backlog task ratio tracked in Azure.',
+      { text: 'Broader AI-assisted QA and pipeline tooling delivered an estimated $120K in production cost savings over time; also built a Python/SQL metadata pipeline for the Spanish localization team using AWS Bedrock and Lambda.', caseStudy: '/case-study-accessibility-tech-check' },
     ],
   },
   {
@@ -78,7 +78,7 @@ export const experience = [
     bullets: [
       'Led discovery across all departments: audited Asana workflows, met with every production director to map current-state processes, and defined a phased roadmap of improvements adoptable across all teams.',
       'Facilitated cross-team conflict resolution sessions to align stakeholders on workflow changes; managed dependencies and risks in Jira and Confluence throughout.',
-      'Co-designed a custom GPT with Art and Accessibility stakeholders to automate WCAG 2.2 compliance review — delivered every requirement and saved an estimated $75K in operational costs.',
+      { text: 'Co-designed a custom GPT with Art and Accessibility stakeholders to automate WCAG 2.2 compliance review — delivered every requirement and saved an estimated $75K in operational costs.', caseStudy: '/case-study-accessibility-tech-check' },
       'Brought Agile methodology, AI tooling, and hands-on training to the PM function; authored a phased transition plan for the incoming PM before promotion.',
     ],
   },
