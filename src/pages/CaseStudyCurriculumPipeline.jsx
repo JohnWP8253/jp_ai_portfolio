@@ -4,7 +4,7 @@ import '../styles/case-study.css';
 
 export default function CaseStudyCurriculumPipeline() {
   useEffect(() => {
-    document.title = 'Case Study — AI-Powered Curriculum Pipeline | John Pendergrass';
+    document.title = 'Case Study — MOB/GLOB Pipeline | John Pendergrass';
     window.scrollTo(0, 0);
   }, []);
 
@@ -24,13 +24,14 @@ export default function CaseStudyCurriculumPipeline() {
 
       <section className="cs-hero">
         <div className="cs-hero-inner">
-          <p className="cs-hero-label">Director of AI Integration &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; AWS Bedrock</p>
-          <h1>AI-Powered <em>Curriculum</em><br />Content Pipeline</h1>
+          <p className="cs-hero-label">Director of AI Integration &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; AI Engineering &amp; Agile Leadership &nbsp;·&nbsp; 2024–2025</p>
+          <h1>MOB/GLOB<br /><em>Pipeline</em></h1>
           <div className="cs-hero-bottom">
             <p className="cs-hero-sub">
-              Designed and delivered a RAG + ETL pipeline — and led its scale to a production
-              single-agent workflow — that automated the generation of module and grade-level
-              overviews for a K–5 music curriculum.
+              How a two-person AI team shipped a serverless RAG + ETL pipeline on AWS Bedrock —
+              processing module and grade-level overviews (MOBs and GLOBs) in under 8 seconds per
+              module in parallel — then scaled it into production across a full K–5 curriculum
+              using a purpose-built Agile framework for AI delivery.
             </p>
             <div className="cs-hero-meta">
               <div className="cs-meta-chip">Role: <span>Director, AI Integration</span></div>
@@ -41,10 +42,10 @@ export default function CaseStudyCurriculumPipeline() {
             </div>
           </div>
           <div className="cs-hero-stats">
+            <div className="cs-stat"><div className="cs-stat-num">&lt;8s</div><div className="cs-stat-label">Per-Module Processing, In Parallel</div></div>
+            <div className="cs-stat"><div className="cs-stat-num">78:9</div><div className="cs-stat-label">Completed-to-Backlog Ratio at Peak</div></div>
             <div className="cs-stat"><div className="cs-stat-num">216+</div><div className="cs-stat-label">Lesson Plans Processed</div></div>
-            <div className="cs-stat"><div className="cs-stat-num">72</div><div className="cs-stat-label">Module Overviews Generated</div></div>
-            <div className="cs-stat"><div className="cs-stat-num">6</div><div className="cs-stat-label">Grade-Level Overviews</div></div>
-            <div className="cs-stat"><div className="cs-stat-num">&lt;10min</div><div className="cs-stat-label">Per Grade · End-to-End</div></div>
+            <div className="cs-stat"><div className="cs-stat-num">6</div><div className="cs-stat-label">Grade Levels Scaled</div></div>
           </div>
         </div>
       </section>
@@ -72,6 +73,10 @@ export default function CaseStudyCurriculumPipeline() {
             documents — inconsistently, slowly, and at significant cost to their capacity for higher-order
             curriculum work.
           </p>
+          <div className="cs-callout">
+            <div className="cs-callout-label">In Their Words</div>
+            <p style={{ fontStyle: 'italic' }}>&ldquo;We needed a system that could process curriculum content reliably, quickly, and with guardrails baked in — not bolted on after the fact.&rdquo;</p>
+          </div>
           <h3>Core constraints</h3>
           <ul>
             <li><strong>Strict-copy fidelity:</strong> Several sections required verbatim extraction — no paraphrasing allowed. Any error here would propagate to teacher-facing materials.</li>
@@ -168,6 +173,10 @@ export default function CaseStudyCurriculumPipeline() {
             ingested each set of three lesson plans assigned to a module and passed a single, accumulating
             JSON payload through a chain of purpose-built Lambda functions.
           </p>
+          <div className="cs-callout cs-callout-amber">
+            <div className="cs-callout-label">In Their Words</div>
+            <p style={{ fontStyle: 'italic' }}>&ldquo;No LangChain, no orchestration framework — just clean AWS primitives wired together intentionally. The simplicity was a feature, not a constraint.&rdquo;</p>
+          </div>
 
           <div className="cs-diagram-wrap">
             <svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" fontFamily="DM Sans, sans-serif">
@@ -354,6 +363,8 @@ export default function CaseStudyCurriculumPipeline() {
             <span className="cs-tech-tag">DeepL API</span>
             <span className="cs-tech-tag">Bloom's Taxonomy Engine</span>
             <span className="cs-tech-tag">JSON / Google Docs API</span>
+            <span className="cs-tech-tag">Scrum</span>
+            <span className="cs-tech-tag">Jira Cloud</span>
           </div>
         </div>
       </section>
@@ -372,6 +383,24 @@ export default function CaseStudyCurriculumPipeline() {
               <p>Two entry-level engineers joined from Phase 3 onward, contributing to pipeline hardening, production agent workflow implementation, the grade-level overview build, and the K–5 rollout. I provided technical direction, code review, and architectural decision-making throughout.</p>
             </div>
           </div>
+
+          <h3>Building Agile habits inside an AI engineering team</h3>
+          <p>
+            The team was new to Agile — two engineers with strong technical instincts but no
+            formal Scrum background. My role was dual: technical product owner and Scrum coach
+            simultaneously. We started with lightweight sprint cadences and basic backlog rituals
+            before introducing retrospectives and velocity tracking — building the habits first,
+            then layering in the framework. At peak, the team maintained a{' '}
+            <strong>78:9 completed-to-backlog ratio</strong>, a direct result of tight Epic and
+            Story decomposition, clear acceptance criteria, and a team culture of finishing before
+            starting.
+          </p>
+          <p>
+            This tooling mindset carried forward from the WCAG 2.2 Custom GPT I built in the
+            preceding Director of Project Management role — which reduced art-accessibility
+            revision cycles from 3 rounds to 0, saving an estimated $75K — and became a model for
+            AI-assisted QA on the MOB/GLOB pipeline.
+          </p>
         </div>
       </section>
 
@@ -398,6 +427,10 @@ export default function CaseStudyCurriculumPipeline() {
             <li><strong>Vertical alignment documents:</strong> Grade-level overview data could roll up into multi-year scope-and-sequence documents.</li>
             <li><strong>Closed-loop quality management:</strong> CloudWatch KPI thresholds could trigger human review queues for sections scoring below confidence benchmarks.</li>
           </ul>
+          <div className="cs-callout">
+            <div className="cs-callout-label">In Their Words</div>
+            <p style={{ fontStyle: 'italic' }}>&ldquo;The best AI systems aren&apos;t impressive because of the model. They&apos;re impressive because someone thought carefully about what happens before and after the model call.&rdquo;</p>
+          </div>
         </div>
       </section>
 

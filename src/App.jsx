@@ -14,6 +14,7 @@ import Footer      from './components/Footer';
 
 import CaseStudyCurriculumPipeline    from './pages/CaseStudyCurriculumPipeline';
 import CaseStudyAccessibilityTechCheck from './pages/CaseStudyAccessibilityTechCheck';
+import CaseStudyHighDropSum           from './pages/CaseStudyHighDropSum';
 
 function Portfolio() {
   useEffect(() => {
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/" element={<Portfolio />} />
         <Route path="/case-study-curriculum-pipeline" element={<CaseStudyCurriculumPipeline />} />
         <Route path="/case-study-accessibility-tech-check" element={<CaseStudyAccessibilityTechCheck />} />
+        <Route path="/case-study-high-drop-sum" element={<CaseStudyHighDropSum />} />
       </Routes>
     </BrowserRouter>
   );

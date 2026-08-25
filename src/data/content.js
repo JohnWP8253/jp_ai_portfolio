@@ -20,25 +20,32 @@ export const expertise = [
   {
     num: '04',
     title: 'Accessibility & Compliance Engineering',
-    body: 'Built a fine-tuned Custom GPT agent to automate ADA and WCAG 2.2 compliance checks across 500K+ digital art assets — eliminating a 3-revision feedback loop to zero and saving $75K+ in operational costs.',
-    tags: ['WCAG 2.2', 'ADA', 'Custom GPT', 'Python', 'OCR', 'Contrast Analysis', 'HIL', 'Prompt Engineering'],
+    body: 'Designed and built a Custom GPT trained on WCAG 2.2 guidelines, embedded into the art team’s workflow to give real-time compliance feedback during asset creation — eliminating a 3-revision feedback loop to zero and saving $75K+ in operational costs.',
+    tags: ['WCAG 2.2', 'Custom GPT', 'Prompt Engineering', 'Workflow Design', 'Instructional Design'],
   },
 ];
 
 export const projects = [
   {
     status: 'delivered',
-    title: 'K–5 Curriculum Content Pipeline',
-    desc: 'Designed and delivered a RAG + ETL pipeline on AWS Bedrock — solo architect through POC, then led a two-engineer team to production across 6 grade levels. 216+ lesson plans processed, 72 module overviews, 6 grade-level overviews, and 144 bilingual parent letters produced.',
+    title: 'MOB/GLOB Curriculum Pipeline',
+    desc: 'Designed and delivered the MOB/GLOB pipeline — a serverless RAG + ETL system on AWS Bedrock processing module overviews in under 8 seconds each, in parallel — solo architect through POC, then led a two-engineer team to production across 6 grade levels. 216+ lesson plans processed, 72 module overviews, 6 grade-level overviews, and 144 bilingual parent letters produced.',
     tags: ['AWS Bedrock', 'Lambda', 'S3', 'RAG', 'ETL', 'Bedrock Knowledge Base', 'DeepL API'],
     caseStudy: '/case-study-curriculum-pipeline',
   },
   {
     status: 'delivered',
-    title: 'Accessibility Tech Check',
-    desc: 'Built a fine-tuned Custom GPT agent that automated ADA and WCAG 2.2 compliance pre-checks for 500K+ digital art assets. Eliminated a 3-revision feedback loop to zero over 2 months with 10 artists — saving $75K+ in operational costs confirmed by the company VP.',
-    tags: ['Custom GPT', 'Python', 'WCAG 2.2', 'ADA', 'OCR', 'Prompt Engineering', 'HIL'],
+    title: 'Art Accessibility Workflow',
+    desc: 'Designed and built a Custom GPT trained on WCAG 2.2 guidelines, embedded directly into the art team’s workflow to give artists real-time compliance feedback during asset creation. Reduced the average revision cycle from 3 rounds to 0, saving an estimated $75K in operational costs.',
+    tags: ['Custom GPT', 'WCAG 2.2', 'Prompt Engineering', 'Workflow Design', 'Instructional Design'],
     caseStudy: '/case-study-accessibility-tech-check',
+  },
+  {
+    status: 'delivered',
+    title: 'High Drop Sum (HDS)',
+    desc: 'Designed a real-time attendance KPI and led a cross-functional touchpoint redesign for a 10-day intro course, giving leadership same-day visibility into cohort health and triggering a tiger-team outreach protocol for at-risk students. Coordinated 5+ departments around a single communication calendar and increased course attendance by 10%.',
+    tags: ['KPI Design', 'Touchpoint Mapping', 'Data Analysis', 'Qlik Cloud', 'Cross-functional Leadership', 'Instructional Design'],
+    caseStudy: '/case-study-high-drop-sum',
   },
   {
     status: 'active',
