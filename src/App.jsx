@@ -46,7 +46,7 @@ function Portfolio() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/jp_ai_portfolio">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/case-study-curriculum-pipeline" element={<CaseStudyCurriculumPipeline />} />
