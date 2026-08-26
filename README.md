@@ -32,7 +32,7 @@ Personal portfolio site for John Pendergrass — AI practitioner, Certified Scru
 ![MLX Badge](https://shields.io/badge/framework-MLX-lightgrey)
 ![RAG Badge](https://shields.io/badge/technique-RAG-teal)
 ![Fine Tuning Badge](https://shields.io/badge/technique-Fine%20Tuning-blueviolet)
-![Prompt Engineering Badge](https://shields.io/badge/skill-Prompt%20Engineering-blue)
+![Prompt Engineering Badge](https://shields.io/badge/skill-Prompt%20Engineering-blue
 ![ClaudeAI Badge](https://shields.io/badge/skill-ClaudeAI-orange)
 ![Claude Code Badge](https://shields.io/badge/skill-Claude%20Code-orange)
 
