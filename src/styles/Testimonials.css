@@ -1,0 +1,61 @@
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.testi-card {
+  background: var(--white);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-quote {
+  position: relative;
+  font-size: 1rem;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+.testi-quote::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.testi-card figcaption { margin-top: auto; }
+
+.testi-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.01em;
+}
+
+.testi-title {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.testi-context {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--burnt-peach);
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 860px) {
+  .testi-grid { grid-template-columns: 1fr; }
+  .testi-card { padding: 2rem; }
+}

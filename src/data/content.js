@@ -141,6 +141,33 @@ export const credentials = [
   },
 ];
 
+export const testimonials = [
+  {
+    quote: "John is an exceptional professional whose strategic vision, technical expertise, and leadership skills were pivotal in driving the success of our software development initiatives… What truly sets John apart is his collaborative mindset and dedication to excellence.",
+    name: 'Nick Poe',
+    title: 'VP of Technology & Product',
+    context: 'Worked with John on the same team at ThriveDX',
+  },
+  {
+    quote: "John is extremely passionate about making education the best experience it can be for both students and instructors… John has an innate sense for good user experience, sleek designs, and clear data presentation. John was passionate, helpful, always up for something new, and a pleasure to work with.",
+    name: 'Brandi Butler',
+    title: 'Engineering Manager, Builders Capital',
+    context: "John's direct manager at ThriveDX",
+  },
+  {
+    quote: "I had the pleasure of working with John at ThriveDX. He brings a unique combination of technical expertise, leadership, and positivity to every team he works with… John is not only a highly skilled developer but also a natural leader and mentor.",
+    name: 'Kimberly C. Cohane, Ph.D.',
+    title: 'AI Operations Automation & Data Strategy Leader',
+    context: 'Senior to John at ThriveDX',
+  },
+  {
+    quote: "John's technical skills are exceptional, and he has a particular talent for building data visualizations and reporting that helps leaders make data-driven decisions… He has a 'can-do' attitude that is infectious, and he is constantly upskilling as a life-long learner.",
+    name: 'Cynthia Glunt, M.Ed.',
+    title: 'Entrepreneur, EdTech Leader',
+    context: 'Senior to John, did not manage him directly',
+  },
+];
+
 export const contactLinks = [
   { label: 'Email',    value: 'john.pendergrass@me.com',       href: 'mailto:john.pendergrass@me.com' },
   { label: 'Phone',    value: '(615) 714-6019',                href: 'tel:+16157146019' },

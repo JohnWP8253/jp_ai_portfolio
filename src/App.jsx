@@ -2,15 +2,16 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/globals.css';
 
-import Navbar      from './components/Navbar';
-import Hero        from './components/Hero';
-import About       from './components/About';
-import Expertise   from './components/Expertise';
-import Projects    from './components/Projects';
-import Experience  from './components/Experience';
-import Credentials from './components/Credentials';
-import Contact     from './components/Contact';
-import Footer      from './components/Footer';
+import Navbar       from './components/Navbar';
+import Hero         from './components/Hero';
+import About        from './components/About';
+import Expertise    from './components/Expertise';
+import Projects     from './components/Projects';
+import Experience   from './components/Experience';
+import Credentials  from './components/Credentials';
+import Testimonials from './components/Testimonials';
+import Contact      from './components/Contact';
+import Footer       from './components/Footer';
 
 import CaseStudyCurriculumPipeline    from './pages/CaseStudyCurriculumPipeline';
 import CaseStudyAccessibilityTechCheck from './pages/CaseStudyAccessibilityTechCheck';
@@ -37,6 +38,7 @@ function Portfolio() {
         <Projects />
         <Experience />
         <Credentials />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />
