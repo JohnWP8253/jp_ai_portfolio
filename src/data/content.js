@@ -14,13 +14,13 @@ export const expertise = [
   {
     num: '03',
     title: 'Education & Instructional Design',
-    body: '15 years designing curriculum and developing instructors — from corporate language programs to university-level technical education.',
+    body: '15 years designing curriculum and developing instructors, from corporate language programs to university-level technical education.',
     tags: ['Instructional Design', 'ADDIE', 'Curriculum Dev', 'Technical Writing', 'LMS', 'Facilitation'],
   },
   {
     num: '04',
     title: 'Accessibility & Compliance Engineering',
-    body: 'Designed and built a Custom GPT trained on WCAG 2.2 guidelines, embedded into the art team’s workflow to give real-time compliance feedback during asset creation — eliminating a 3-revision feedback loop to zero and saving $75K+ in operational costs.',
+    body: 'Designed and built a Custom GPT trained on WCAG 2.2 guidelines, embedded into the art team’s workflow to give real-time compliance feedback during asset creation, eliminating a 3-revision feedback loop to zero and saving $75K+ in operational costs.',
     tags: ['WCAG 2.2', 'Custom GPT', 'Prompt Engineering', 'Workflow Design', 'Instructional Design'],
   },
 ];
@@ -29,7 +29,7 @@ export const projects = [
   {
     status: 'delivered',
     title: 'MOB/GLOB Curriculum Pipeline',
-    desc: 'Designed and delivered the MOB/GLOB pipeline — a serverless RAG + ETL system on AWS Bedrock processing module overviews in under 8 seconds each, in parallel — solo architect through POC, then led a two-engineer team to production across 6 grade levels. 216+ lesson plans processed, 72 module overviews, 6 grade-level overviews, and 144 bilingual parent letters produced.',
+    desc: 'Designed and delivered the MOB/GLOB pipeline, a serverless RAG + ETL system on AWS Bedrock processing module overviews in under 8 seconds each, in parallel; solo architect through POC, then led a two-engineer team to production across 6 grade levels. 216+ lesson plans processed, 72 module overviews, 6 grade-level overviews, and 144 bilingual parent letters produced.',
     tags: ['AWS Bedrock', 'Lambda', 'S3', 'RAG', 'ETL', 'Bedrock Knowledge Base', 'DeepL API'],
     caseStudy: '/case-study-curriculum-pipeline',
   },
@@ -49,8 +49,8 @@ export const projects = [
   },
   {
     status: 'active',
-    title: 'Premier Properties — Real Estate Site',
-    desc: 'A professional real estate marketing site for a Middle Tennessee REALTOR®. Built with React + Vite and powered by Sanity.io as a headless CMS — the client manages listings, bio, reviews, and market articles through a web dashboard, no coding required.',
+    title: 'Premier Properties, Real Estate Site',
+    desc: 'A professional real estate marketing site for a Middle Tennessee REALTOR®. Built with React + Vite and powered by Sanity.io as a headless CMS; the client manages listings, bio, reviews, and market articles through a web dashboard, no coding required.',
     tags: ['React', 'Vite', 'Sanity.io', 'Headless CMS', 'GH Pages', 'Claude code', 'Vanilla CSS'],
     href: 'https://github.com/Oso-Nice-Sites/isaiah-realestate',
     site: 'https://oso-nice-sites.github.io/isaiah-realestate',
@@ -64,9 +64,9 @@ export const experience = [
     dates: 'Oct 2025 – Mar 2026',
     role: 'Director of AI Integration  |  Agile Program Manager / Scrum Master',
     bullets: [
-      { text: 'Built MOB/GLOB: a RAG/ETL/ELT pipeline converting 36 lesson plans into 12 Module Overviews and a Grade Level Overview via AWS Bedrock, Knowledge Base, Lambdas, Converse, Guardrails, CloudWatch, and S3 — generating full K–5 coverage (6 grade levels) in 8 minutes.', caseStudy: '/case-study-curriculum-pipeline' },
-      'Sole subject matter expert on the project — self-taught AWS Bedrock and Azure DevOps from documentation with no SME to lean on; drove continuous improvement from PoC → MVP → enterprise workflow using HIL review gates and iterative stakeholder feedback loops with content and graphics teams.',
-      'Hired, trained, and mentored two entry-level AI specialists while acting as both Scrum Master and Product Owner; used Agile coaching 1:1s to adapt Ways of Working — achieving a 78:9 completed-to-backlog task ratio tracked in Azure.',
+      { text: 'Built MOB/GLOB: a RAG/ETL/ELT pipeline converting 36 lesson plans into 12 Module Overviews and a Grade Level Overview via AWS Bedrock, Knowledge Base, Lambdas, Converse, Guardrails, CloudWatch, and S3, generating full K–5 coverage (6 grade levels) in 8 minutes.', caseStudy: '/case-study-curriculum-pipeline' },
+      'Sole subject matter expert on the project, self-taught AWS Bedrock and Azure DevOps from documentation with no SME to lean on; drove continuous improvement from PoC → MVP → enterprise workflow using HIL review gates and iterative stakeholder feedback loops with content and graphics teams.',
+      'Hired, trained, and mentored two entry-level AI specialists while acting as both Scrum Master and Product Owner; used Agile coaching 1:1s to adapt Ways of Working, achieving a 78:9 completed-to-backlog task ratio tracked in Azure.',
       { text: 'Broader AI-assisted QA and pipeline tooling delivered an estimated $120K in production cost savings over time; also built a Python/SQL metadata pipeline for the Spanish localization team using AWS Bedrock and Lambda.', caseStudy: '/case-study-accessibility-tech-check' },
     ],
   },
@@ -78,7 +78,7 @@ export const experience = [
     bullets: [
       'Led discovery across all departments: audited Asana workflows, met with every production director to map current-state processes, and defined a phased roadmap of improvements adoptable across all teams.',
       'Facilitated cross-team conflict resolution sessions to align stakeholders on workflow changes; managed dependencies and risks in Jira and Confluence throughout.',
-      { text: 'Co-designed a custom GPT with Art and Accessibility stakeholders to automate WCAG 2.2 compliance review — delivered every requirement and saved an estimated $75K in operational costs.', caseStudy: '/case-study-accessibility-tech-check' },
+      { text: 'Co-designed a custom GPT with Art and Accessibility stakeholders to automate WCAG 2.2 compliance review, delivered every requirement, and saved an estimated $75K in operational costs.', caseStudy: '/case-study-accessibility-tech-check' },
       'Brought Agile methodology, AI tooling, and hands-on training to the PM function; authored a phased transition plan for the incoming PM before promotion.',
     ],
   },
@@ -88,7 +88,7 @@ export const experience = [
     dates: 'Sept 2023 – Aug 2024',
     role: 'Sr. Product Owner',
     bullets: [
-      'Launched the AI Software Development Program — owned roadmap, backlog, and Epic/Story mapping in Jira.',
+      'Launched the AI Software Development Program, owned roadmap, backlog, and Epic/Story mapping in Jira.',
       'Ran all Agile ceremonies as program lead; improved team velocity and production efficiency by 20%.',
       'Redesigned grading workflow, cutting costs by $10K/month through continuous improvement.',
     ],
@@ -116,7 +116,7 @@ export const experience = [
     company: 'EF Education',
     location: 'Surabaya, Indonesia',
     dates: 'Sept 2005 – May 2012',
-    role: 'Director of Studies — Corporate Language Learning Solutions',
+    role: 'Director of Studies, Corporate Language Learning Solutions',
     bullets: [
       'Led corporate training programs for clients including Coca-Cola and Alstom Power; scaled enrollment 100% in three years.',
     ],

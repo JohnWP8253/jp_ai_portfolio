@@ -4,7 +4,7 @@ import '../styles/case-study.css';
 
 export default function CaseStudyHighDropSum() {
   useEffect(() => {
-    document.title = 'Case Study — High Drop Sum | John Pendergrass';
+    document.title = 'Case Study · High Drop Sum | John Pendergrass';
     window.scrollTo(0, 0);
   }, []);
 
@@ -29,7 +29,7 @@ export default function CaseStudyHighDropSum() {
           <div className="cs-hero-bottom">
             <p className="cs-hero-sub">
               How a custom KPI, cross-functional touchpoint mapping, and a rapid-response tiger
-              team reduced intro-course attrition — and saved cohorts from cancellation.
+              team reduced intro-course attrition, and saved cohorts from cancellation.
             </p>
             <div className="cs-hero-meta">
               <div className="cs-meta-chip">Role: <span>Sr. Manager, Program Performance</span></div>
@@ -55,8 +55,8 @@ export default function CaseStudyHighDropSum() {
 
       <section id="challenge">
         <div className="cs-section-inner">
-          <p className="cs-eyebrow">01 — The Problem</p>
-          <h2>Students weren&apos;t finishing the intro course — and nobody knew why.</h2>
+          <p className="cs-eyebrow">01 · The Problem</p>
+          <h2>Students weren&apos;t finishing the intro course, and nobody knew why.</h2>
           <p>
             A leading EdTech company offered a free 10-day introductory course designed to give
             prospective students a taste of its software development and cybersecurity programs.
@@ -65,13 +65,13 @@ export default function CaseStudyHighDropSum() {
           </p>
           <p>
             The reality was different. Students were dropping out at high rates before completing
-            the 10 days — often in the first half of the course. When cohorts didn&apos;t have
+            the 10 days, often in the first half of the course. When cohorts didn&apos;t have
             enough continuing students, they were postponed or cancelled, creating downstream
             problems for scheduling, staffing, and revenue.
           </p>
           <div className="cs-callout">
             <div className="cs-callout-label">In Their Words</div>
-            <p style={{ fontStyle: 'italic' }}>&ldquo;The existing feedback data wasn&apos;t objective and couldn&apos;t explain why students were dropping. We were measuring the wrong things — and not measuring the right things at all.&rdquo;</p>
+            <p style={{ fontStyle: 'italic' }}>&ldquo;The existing feedback data wasn&apos;t objective and couldn&apos;t explain why students were dropping. We were measuring the wrong things, and not measuring the right things at all.&rdquo;</p>
           </div>
           <p>
             Exit surveys existed but were too generic to surface root cause. There was no
@@ -83,15 +83,15 @@ export default function CaseStudyHighDropSum() {
 
       <section id="research">
         <div className="cs-section-inner" style={{ maxWidth: '960px' }}>
-          <p className="cs-eyebrow">02 — The Research</p>
+          <p className="cs-eyebrow">02 · The Research</p>
           <h2>Mapping every touchpoint in the first five days revealed a barrage.</h2>
           <p>
             Working from a customer touchpoint map created by the marketing director, I overlaid
             every communication interaction that prospective students received during the intro
-            course — from every department that touched them.
+            course, from every department that touched them.
           </p>
           <p>
-            What emerged was striking. Within the first four to five days — just half the course —
+            What emerged was striking. Within the first four to five days, just half the course,
             students were being contacted by multiple departments on the same day, sometimes via
             text, email, and phone call all at once. Sales follow-ups, student success check-ins,
             and survey requests were all competing for student attention simultaneously.
@@ -131,20 +131,20 @@ export default function CaseStudyHighDropSum() {
 
           <div className="cs-callout cs-callout-amber">
             <div className="cs-callout-label">In Their Words</div>
-            <p style={{ fontStyle: 'italic' }}>&ldquo;Students no longer felt like students — they felt like customers being sold a product. We were asking them to make a high-stakes financial decision while also testing them, surveying them, and implying they might not be good enough.&rdquo;</p>
+            <p style={{ fontStyle: 'italic' }}>&ldquo;Students no longer felt like students; they felt like customers being sold a product. We were asking them to make a high-stakes financial decision while also testing them, surveying them, and implying they might not be good enough.&rdquo;</p>
           </div>
           <p>
             The instructional team&apos;s own touchpoints added to the burden. Feedback requests,
             skills assessments, and early evaluations in the first few days compounded the
             pressure rather than building confidence. The overall message students were receiving
-            — intentional or not — was one of doubt and transaction, not support and growth.
+            intentional or not, was one of doubt and transaction, not support and growth.
           </p>
         </div>
       </section>
 
       <section id="solution">
         <div className="cs-section-inner" style={{ maxWidth: '960px' }}>
-          <p className="cs-eyebrow">03 — The Solution</p>
+          <p className="cs-eyebrow">03 · The Solution</p>
           <h2>Two parallel workstreams: touchpoint redesign and a real-time attendance KPI.</h2>
 
           <div className="cs-phase-list">
@@ -152,14 +152,14 @@ export default function CaseStudyHighDropSum() {
               <div className="cs-phase-num">1</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">Cross-functional touchpoint rationalization</div>
-                <div className="cs-phase-desc">Working with marketing, student success, sales, software development, cybersecurity, and instructional design, we mapped which department would own which touchpoint on which day. The first two days were protected — students received a structured, calm onboarding focused entirely on learning, not evaluation or sales pressure.</div>
+                <div className="cs-phase-desc">Working with marketing, student success, sales, software development, cybersecurity, and instructional design, we mapped which department would own which touchpoint on which day. The first two days were protected: students received a structured, calm onboarding focused entirely on learning, not evaluation or sales pressure.</div>
               </div>
             </div>
             <div className="cs-phase">
               <div className="cs-phase-num">2</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">Designing the High Drop Sum (HDS) KPI</div>
-                <div className="cs-phase-desc">With a colleague, I designed a method to track shifts in daily attendance from one class to the next across all 10 days. Rather than looking at total attendance at the end of the course, HDS measured the delta between consecutive classes — surfacing drop-off as it happened, not after the fact.</div>
+                <div className="cs-phase-desc">With a colleague, I designed a method to track shifts in daily attendance from one class to the next across all 10 days. Rather than looking at total attendance at the end of the course, HDS measured the delta between consecutive classes, surfacing drop-off as it happened, not after the fact.</div>
               </div>
             </div>
             <div className="cs-phase">
@@ -178,14 +178,14 @@ export default function CaseStudyHighDropSum() {
               <div className="cs-phase-num">4</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">Tiger team for consecutive absences</div>
-                <div className="cs-phase-desc">A dedicated task force was established to personally reach out to any student who missed two consecutive classes. The goal was truth-gathering: were they dealing with extenuating circumstances, or had something in the program failed them? This distinction was critical — it separated churn from fixable problems.</div>
+                <div className="cs-phase-desc">A dedicated task force was established to personally reach out to any student who missed two consecutive classes. The goal was truth-gathering: were they dealing with extenuating circumstances, or had something in the program failed them? This distinction was critical; it separated churn from fixable problems.</div>
               </div>
             </div>
             <div className="cs-phase">
               <div className="cs-phase-num">5</div>
               <div className="cs-phase-body">
                 <div className="cs-phase-title">Instructor energy coaching</div>
-                <div className="cs-phase-desc">Using insights from tiger team conversations, we coached instructors on how to open each class with high energy and maintain momentum throughout — especially in the first half of the course where HDS data showed the steepest drops.</div>
+                <div className="cs-phase-desc">Using insights from tiger team conversations, we coached instructors on how to open each class with high energy and maintain momentum throughout, especially in the first half of the course where HDS data showed the steepest drops.</div>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function CaseStudyHighDropSum() {
 
       <section id="results">
         <div className="cs-section-inner">
-          <p className="cs-eyebrow">04 — Outcomes</p>
+          <p className="cs-eyebrow">04 · Outcomes</p>
           <h2>What changed when we treated students like students.</h2>
           <p>
             The combined impact of reduced communication overload, real-time HDS tracking, and
@@ -203,7 +203,7 @@ export default function CaseStudyHighDropSum() {
           </p>
           <ul>
             <li>First-half retention improved as early touchpoint reduction gave students psychological space to engage with learning rather than sales pressure.</li>
-            <li>Cross-functional alignment achieved — for the first time, sales, student success, instructional design, and program leadership shared a single communication calendar.</li>
+            <li>Cross-functional alignment achieved: for the first time, sales, student success, instructional design, and program leadership shared a single communication calendar.</li>
             <li>HDS provided real-time visibility where none existed before. Cohort health became actionable within 24 hours of each class.</li>
             <li>Tiger team outreach surfaced genuine root causes, separating systemic program failures from individual life circumstances.</li>
             <li>Instructor coaching reduced early energy drop-off, with classes beginning stronger through the critical first five days.</li>
@@ -225,7 +225,7 @@ export default function CaseStudyHighDropSum() {
 
       <section>
         <div className="cs-section-inner">
-          <p className="cs-eyebrow">05 — Role &amp; Approach</p>
+          <p className="cs-eyebrow">05 · Role &amp; Approach</p>
           <h2>Sr. Manager, Program Performance &amp; Success</h2>
           <div className="cs-role-card">
             <div className="cs-role-block">
@@ -234,7 +234,7 @@ export default function CaseStudyHighDropSum() {
             </div>
             <div className="cs-role-block">
               <h3>Design Philosophy</h3>
-              <p>The solution wasn&apos;t to eliminate outreach — it was to orchestrate it around the student&apos;s experience, not around departmental convenience. Measurement without response is just record-keeping; HDS was wired directly to action from day one.</p>
+              <p>The solution wasn&apos;t to eliminate outreach; it was to orchestrate it around the student&apos;s experience, not around departmental convenience. Measurement without response is just record-keeping; HDS was wired directly to action from day one.</p>
             </div>
           </div>
         </div>
@@ -242,10 +242,10 @@ export default function CaseStudyHighDropSum() {
 
       <section id="lessons">
         <div className="cs-section-inner">
-          <p className="cs-eyebrow">06 — Reflection</p>
+          <p className="cs-eyebrow">06 · Reflection</p>
           <h2>What this project was really about.</h2>
           <p>
-            This wasn&apos;t just a data problem. It was a design problem — specifically, the
+            This wasn&apos;t just a data problem. It was a design problem, specifically, the
             design of the student experience during the most vulnerable moment in their journey:
             deciding whether to invest time, money, and belief in themselves.
           </p>
@@ -258,12 +258,12 @@ export default function CaseStudyHighDropSum() {
           <p>
             The deeper lesson was organizational: when every department optimizes for its own
             goals without coordination, the student pays the price. The solution wasn&apos;t to
-            eliminate outreach — it was to orchestrate it around the student&apos;s experience, not
+            eliminate outreach; it was to orchestrate it around the student&apos;s experience, not
             around departmental convenience.
           </p>
           <div className="cs-callout">
             <div className="cs-callout-label">In Their Words</div>
-            <p style={{ fontStyle: 'italic' }}>&ldquo;Measurement without response is just record-keeping. The HDS worked because it was wired directly to action — a tiger team, a coaching protocol, and a communication calendar that moved in response to the data.&rdquo;</p>
+            <p style={{ fontStyle: 'italic' }}>&ldquo;Measurement without response is just record-keeping. The HDS worked because it was wired directly to action: a tiger team, a coaching protocol, and a communication calendar that moved in response to the data.&rdquo;</p>
           </div>
         </div>
       </section>
