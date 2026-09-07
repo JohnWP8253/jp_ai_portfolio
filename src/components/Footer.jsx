@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-inner">
           <p>John Pendergrass, Lebanon, Tennessee</p>
-          <p>Built and deployed on GitHub Pages &middot; &copy; 2025</p>
+          <p>Deployed on Cloudfare &middot; &copy; 2026</p>
         </div>
       </div>
     </footer>
