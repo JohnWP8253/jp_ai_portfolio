@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-top">
           <div className="hero-text">
-            <p className="hero-kicker">Lebanon, Tennessee &mdash; Dev, AI and TPM roles</p>
+            <p className="hero-kicker">Lebanon, Tennessee: Dev, AI, and TPM roles</p>
             <h1 className="hero-name" id="hero-name">John<br />Pendergrass</h1>
           </div>
           <div className="hero-photo-wrap">
@@ -15,7 +15,7 @@ export default function Hero() {
         </div>
         <div className="hero-bottom">
           <p className="hero-tagline">
-            I don&apos;t push from behind or pull from ahead. I walk alongside — that&apos;s what educating actually is.
+            I don&apos;t push from behind or pull from ahead. I walk alongside: that&apos;s what educating actually is.
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-dark">View work</a>
