@@ -24,7 +24,7 @@ export default function CaseStudyAccessibilityTechCheck() {
 
       <section className="cs-hero">
         <div className="cs-hero-inner">
-          <p className="cs-hero-label">Director of Project Management &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; 2023–2024</p>
+          <p className="cs-hero-label">Director of Project Management &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; 2025</p>
           <h1>Art Accessibility<br /><em>Workflow</em></h1>
           <div className="cs-hero-bottom">
             <p className="cs-hero-sub">
