@@ -24,7 +24,7 @@ export default function CaseStudyCurriculumPipeline() {
 
       <section className="cs-hero">
         <div className="cs-hero-inner">
-          <p className="cs-hero-label">Director of AI Integration &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; AI Engineering &amp; Agile Leadership &nbsp;·&nbsp; 2024–2025</p>
+          <p className="cs-hero-label">Director of AI Integration &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; AI Engineering &amp; Agile Leadership &nbsp;·&nbsp; 2025–2026</p>
           <h1>MOB/GLOB<br /><em>Pipeline</em></h1>
           <div className="cs-hero-bottom">
             <p className="cs-hero-sub">
