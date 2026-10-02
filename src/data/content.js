@@ -170,7 +170,6 @@ export const testimonials = [
 
 export const contactLinks = [
   { label: 'Email',    value: 'john.pendergrass@me.com',       href: 'mailto:john.pendergrass@me.com' },
-  { label: 'Phone',    value: '(615) 714-6019',                href: 'tel:+16157146019' },
   { label: 'LinkedIn', value: 'linkedin.com/in/j-pendergrass', href: 'https://www.linkedin.com/in/j-pendergrass' },
   { label: 'GitHub',   value: 'github.com/JohnWP8253',         href: 'https://github.com/JohnWP8253' },
 ];
