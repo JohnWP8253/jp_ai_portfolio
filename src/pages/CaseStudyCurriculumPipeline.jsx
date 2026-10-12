@@ -29,8 +29,8 @@ export default function CaseStudyCurriculumPipeline() {
           <div className="cs-hero-bottom">
             <p className="cs-hero-sub">
               How a two-person AI team shipped a serverless RAG + ETL pipeline on AWS Bedrock,
-              processing module and grade-level overviews (MOBs and GLOBs) in under 8 seconds per
-              module in parallel, then scaled it into production across a full K–5 curriculum
+              processing module and grade-level overviews (MOBs and GLOBs) for all six grade levels
+              in 8 minutes total, in parallel, then scaled it into production across a full K–5 curriculum
               using a purpose-built Agile framework for AI delivery.
             </p>
             <div className="cs-hero-meta">
@@ -175,7 +175,7 @@ export default function CaseStudyCurriculumPipeline() {
           </p>
           <div className="cs-callout cs-callout-amber">
             <div className="cs-callout-label">In Their Words</div>
-            <p style={{ fontStyle: 'italic' }}>&ldquo;No LangChain, no orchestration framework: just clean AWS primitives wired together intentionally. The simplicity was a feature, not a constraint.&rdquo;</p>
+            <p style={{ fontStyle: 'italic' }}>&ldquo;No orchestration framework: just clean AWS primitives wired together intentionally. The simplicity was a feature, not a constraint.&rdquo;</p>
           </div>
 
           <div className="cs-diagram-wrap">

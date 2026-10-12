@@ -29,7 +29,7 @@ export const projects = [
   {
     status: 'delivered',
     title: 'MOB/GLOB Curriculum Pipeline',
-    desc: 'Designed and delivered the MOB/GLOB pipeline, a serverless RAG + ETL system on AWS Bedrock processing module overviews in under 8 seconds each, in parallel; solo architect through POC, then led a two-engineer team to production across 6 grade levels. 216+ lesson plans processed, 72 module overviews, 6 grade-level overviews, and 144 bilingual parent letters produced.',
+    desc: 'Designed and delivered the MOB/GLOB pipeline, a serverless RAG + ETL system on AWS Bedrock running all six grade levels in 8 minutes total, in parallel; solo architect through POC, then led a two-engineer team to production across 6 grade levels. 216+ lesson plans processed, 72 module overviews, 6 grade-level overviews, and 144 bilingual parent letters produced.',
     tags: ['AWS Bedrock', 'Lambda', 'S3', 'RAG', 'ETL', 'Bedrock Knowledge Base', 'DeepL API'],
     caseStudy: '/case-study-curriculum-pipeline',
   },
@@ -67,7 +67,7 @@ export const projects = [
 
 export const experience = [
   {
-    company: 'QuaverED',
+    company: 'An EdTech Market Leader',
     location: 'Hybrid',
     dates: 'Oct 2025 – Mar 2026',
     role: 'Director of AI Integration  |  Agile Program Manager / Scrum Master',
@@ -79,7 +79,7 @@ export const experience = [
     ],
   },
   {
-    company: 'QuaverED',
+    company: 'An EdTech Market Leader',
     location: 'Hybrid',
     dates: 'Apr 2025 – Oct 2025',
     role: 'Director of Project Management',
@@ -91,7 +91,7 @@ export const experience = [
     ],
   },
   {
-    company: 'ThriveDX',
+    company: 'A Leading EdTech Company',
     location: 'Remote',
     dates: 'Sept 2023 – Aug 2024',
     role: 'Sr. Product Owner',
@@ -102,7 +102,7 @@ export const experience = [
     ],
   },
   {
-    company: 'ThriveDX',
+    company: 'A Leading EdTech Company',
     location: 'Remote',
     dates: 'Apr 2022 – Sept 2023',
     role: 'Sr. Manager of Program Performance & Success',
@@ -154,19 +154,19 @@ export const testimonials = [
     quote: "John is an exceptional professional whose strategic vision, technical expertise, and leadership skills were pivotal in driving the success of our software development initiatives… What truly sets John apart is his collaborative mindset and dedication to excellence.",
     name: 'Nick Poe',
     title: 'VP of Technology & Product',
-    context: 'Worked with John on the same team at ThriveDX',
+    context: 'Worked with John on the same team',
   },
   {
     quote: "John is extremely passionate about making education the best experience it can be for both students and instructors… John has an innate sense for good user experience, sleek designs, and clear data presentation. John was passionate, helpful, always up for something new, and a pleasure to work with.",
     name: 'Brandi Butler',
     title: 'Engineering Manager, Builders Capital',
-    context: "John's direct manager at ThriveDX",
+    context: "John's direct manager",
   },
   {
     quote: "I had the pleasure of working with John at ThriveDX. He brings a unique combination of technical expertise, leadership, and positivity to every team he works with… John is not only a highly skilled developer but also a natural leader and mentor.",
     name: 'Kimberly C. Cohane, Ph.D.',
     title: 'AI Operations Automation & Data Strategy Leader',
-    context: 'Senior to John at ThriveDX',
+    context: 'Senior to John',
   },
   {
     quote: "John's technical skills are exceptional, and he has a particular talent for building data visualizations and reporting that helps leaders make data-driven decisions… He has a 'can-do' attitude that is infectious, and he is constantly upskilling as a life-long learner.",
