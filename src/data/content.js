@@ -55,6 +55,14 @@ export const projects = [
     href: 'https://github.com/Oso-Nice-Sites/isaiah-realestate',
     site: 'https://oso-nice-sites.github.io/isaiah-realestate',
   },
+  {
+    status: 'active',
+    title: 'Dominic Howard for Tennessee, Campaign Site',
+    desc: 'The campaign website for a Tennessee State House race. Built with Next.js on Cloudflare Workers and powered by Sanity as a headless CMS; campaign staff edit pages in a hosted content editor, with a Cloudflare D1 database and field-level encryption in place for volunteer and contact forms.',
+    tags: ['Next.js', 'TypeScript', 'Cloudflare Workers', 'Cloudflare D1', 'Sanity.io', 'Drizzle ORM', 'GitHub Actions', 'Claude code'],
+    href: 'https://github.com/Oso-Nice-Sites/dominic4tn',
+    site: 'https://dominichoward.org',
+  },
 ];
 
 export const experience = [
